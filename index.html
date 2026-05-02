@@ -51,7 +51,7 @@ img {
 .hero {
   min-height: 92vh;
   background: linear-gradient(to top, rgba(8,10,13,0.92), rgba(8,10,13,0.25) 48%, rgba(8,10,13,0.65)),
-              url('your-image-1.jpg') center/cover no-repeat;
+              url('your-image-1.jpg') 58% 18% / cover no-repeat;
   display: flex;
   align-items: flex-end;
   padding: 28px;
@@ -292,22 +292,31 @@ h1 {
 
 .gallery {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
 .photo {
   position: relative;
-  min-height: 340px;
+  min-height: 320px;
   overflow: hidden;
   border-radius: 8px;
   border: 1px solid var(--line);
   background: var(--panel);
 }
 
+.photo.featured {
+  grid-column: span 2;
+}
+
+.photo.portrait {
+  min-height: 520px;
+}
+
 .photo img {
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .photo figcaption {
@@ -405,6 +414,7 @@ footer {
   }
 
   .hero {
+    background-position: 58% 8%;
     padding: 120px 20px 28px;
   }
 
@@ -425,8 +435,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .photo.featured {
+    grid-column: span 1;
+  }
+
   .photo {
     min-height: 280px;
+  }
+
+  .photo.portrait {
+    min-height: 420px;
   }
 }
 </style>
@@ -464,7 +482,7 @@ footer {
     <div class="section-inner">
       <div class="section-header">
         <h2>Current Focus</h2>
-        <p>Simple numbers that keep the training honest. Update these as your season changes.</p>
+        <p>Simple numbers that keep the training honest, including weekly mileage synced from Strava.</p>
       </div>
       <div class="stats-grid" id="stats"></div>
     </div>
@@ -530,8 +548,8 @@ footer {
 </footer>
 
 <script>
-const stats = [
-  { label: "Weekly target", value: "65 km" },
+const baseStats = [
+  { label: "This week", value: "Loading..." },
   { label: "Next race", value: "10K" },
   { label: "Current block", value: "Base + speed" }
 ];
@@ -559,6 +577,15 @@ const blogPosts = [
 
 const photos = [
   { src: "your-image-1.jpg", caption: "Race effort and focus" },
+  { src: "photos/night-road-01.jpg", caption: "Night race rhythm on open roads", type: "featured" },
+  { src: "photos/night-road-02.jpg", caption: "Rolling through the late-night course", type: "featured" },
+  { src: "photos/night-track-01.jpg", caption: "Track stretch under the lights", type: "featured" },
+  { src: "photos/night-track-02.jpg", caption: "Holding form late in the race", type: "featured" },
+  { src: "photos/redbull-arch-01.jpg", caption: "Cruising past the race arch", type: "portrait" },
+  { src: "photos/redbull-arch-02.jpg", caption: "Race night through the city", type: "portrait" },
+  { src: "photos/redbull-arch-03.jpg", caption: "Steady stride near the arch", type: "portrait" },
+  { src: "photos/dark-road-01.jpg", caption: "Focused miles after dark", type: "portrait" },
+  { src: "photos/dark-road-close.jpg", caption: "Close-up from the night course", type: "portrait" },
   { src: "your-image-2.jpeg", caption: "Training days that build the story" }
 ];
 
@@ -566,13 +593,44 @@ const fallbackWorkouts = [
   { day: "Waiting for first sync", title: "Run the Strava workflow", distance: "0.0 km", pace: "-", effort: 0 }
 ];
 
-function renderStats() {
+function renderStats(stats) {
   document.getElementById("stats").innerHTML = stats.map(item => `
     <article class="stat">
       <span>${item.label}</span>
       <strong>${item.value}</strong>
+      ${item.note ? `<span>${item.note}</span>` : ""}
     </article>
   `).join("");
+}
+
+async function loadStravaSummary() {
+  renderStats(baseStats);
+
+  try {
+    const response = await fetch("data/strava-summary.json", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`Could not load Strava summary (${response.status})`);
+    }
+
+    const summary = await response.json();
+    renderStats([
+      {
+        label: "This week",
+        value: summary.mileage || "0.0 km",
+        note: `${summary.runCount || 0} runs / ${summary.averagePace || "-"} avg`
+      },
+      baseStats[1],
+      baseStats[2]
+    ]);
+  } catch (error) {
+    console.warn(error);
+    renderStats([
+      { label: "This week", value: "Sync pending", note: "Run the Strava workflow" },
+      baseStats[1],
+      baseStats[2]
+    ]);
+  }
 }
 
 function renderBlogPosts() {
@@ -603,8 +661,8 @@ function renderPostReader(index) {
 
 function renderGallery() {
   document.getElementById("gallery").innerHTML = photos.map(photo => `
-    <figure class="photo">
-      <img src="${photo.src}" alt="${photo.caption}">
+    <figure class="photo ${photo.type || ""}">
+      <img src="${photo.src}" alt="${photo.caption}" loading="lazy" onerror="this.closest('figure').remove()">
       <figcaption>${photo.caption}</figcaption>
     </figure>
   `).join("");
@@ -660,7 +718,7 @@ async function loadStravaWorkouts() {
   }
 }
 
-renderStats();
+loadStravaSummary();
 renderBlogPosts();
 renderGallery();
 loadStravaWorkouts();

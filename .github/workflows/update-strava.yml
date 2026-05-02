@@ -32,4 +32,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update Strava activity data
-          file_pattern: data/strava-activities.json
+          file_pattern: data/strava-activities.json data/strava-summary.json

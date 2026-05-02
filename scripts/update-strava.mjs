@@ -6,7 +6,8 @@ const {
   STRAVA_REFRESH_TOKEN
 } = process.env;
 
-const outputPath = new URL("../data/strava-activities.json", import.meta.url);
+const activitiesOutputPath = new URL("../data/strava-activities.json", import.meta.url);
+const summaryOutputPath = new URL("../data/strava-summary.json", import.meta.url);
 
 function requireEnv(name, value) {
   if (!value) {
@@ -16,6 +17,60 @@ function requireEnv(name, value) {
 
 function formatDistance(meters) {
   return `${(meters / 1000).toFixed(1)} km`;
+}
+
+function formatDuration(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.round((seconds % 3600) / 60);
+
+  if (hours === 0) return `${minutes} min`;
+
+  return `${hours}h ${minutes.toString().padStart(2, "0")}m`;
+}
+
+function getIndiaDateParts(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+
+  return {
+    year: Number(parts.find(part => part.type === "year").value),
+    month: Number(parts.find(part => part.type === "month").value),
+    day: Number(parts.find(part => part.type === "day").value)
+  };
+}
+
+function makeUtcDateFromParts({ year, month, day }) {
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function getWeekStartDate() {
+  const today = makeUtcDateFromParts(getIndiaDateParts());
+  const day = today.getUTCDay();
+  const daysSinceMonday = day === 0 ? 6 : day - 1;
+  const monday = new Date(today);
+  monday.setUTCDate(today.getUTCDate() - daysSinceMonday);
+  return monday;
+}
+
+function getActivityLocalDate(activity) {
+  const [year, month, day] = activity.start_date_local.slice(0, 10).split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
+function formatWeekRange(weekStart) {
+  const weekEnd = new Date(weekStart);
+  weekEnd.setUTCDate(weekStart.getUTCDate() + 6);
+
+  const formatter = new Intl.DateTimeFormat("en-IN", {
+    day: "numeric",
+    month: "short"
+  });
+
+  return `${formatter.format(weekStart)} - ${formatter.format(weekEnd)}`;
 }
 
 function formatPace(meters, seconds) {
@@ -58,11 +113,48 @@ function estimateEffort(activity) {
   return Math.round(Math.max(20, Math.min(100, distanceScore + paceScore + workoutScore)));
 }
 
+function createWeeklySummary(activities) {
+  const weekStart = getWeekStartDate();
+  const nextWeekStart = new Date(weekStart);
+  nextWeekStart.setUTCDate(weekStart.getUTCDate() + 7);
+
+  const weeklyRuns = activities.filter(activity => {
+    if (activity.type !== "Run") return false;
+
+    const activityDate = getActivityLocalDate(activity);
+    return activityDate >= weekStart && activityDate < nextWeekStart;
+  });
+
+  const totalMeters = weeklyRuns.reduce((sum, activity) => sum + activity.distance, 0);
+  const totalSeconds = weeklyRuns.reduce((sum, activity) => sum + activity.moving_time, 0);
+
+  return {
+    week: formatWeekRange(weekStart),
+    mileage: formatDistance(totalMeters),
+    runCount: weeklyRuns.length,
+    movingTime: formatDuration(totalSeconds),
+    averagePace: formatPace(totalMeters, totalSeconds),
+    updatedAt: new Date().toISOString()
+  };
+}
+
 async function stravaFetch(url, options) {
   const response = await fetch(url, options);
   const text = await response.text();
 
   if (!response.ok) {
+    if (text.includes("activity:read_permission")) {
+      throw new Error(
+        "Strava token is missing activity read permission. Re-authorize the app with scope=read,activity:read and update STRAVA_REFRESH_TOKEN in GitHub secrets."
+      );
+    }
+
+    if (text.includes('"resource":"Application"') && text.includes('"code":"invalid"')) {
+      throw new Error(
+        "Strava rejected the application credentials. Check that STRAVA_CLIENT_ID and STRAVA_CLIENT_SECRET in GitHub secrets match the same Strava app that created STRAVA_REFRESH_TOKEN. If you rotated the client secret, update the GitHub secret too."
+      );
+    }
+
     throw new Error(`Strava request failed ${response.status}: ${text}`);
   }
 
@@ -85,7 +177,7 @@ async function main() {
     })
   });
 
-  const activities = await stravaFetch("https://www.strava.com/api/v3/athlete/activities?per_page=10&page=1", {
+  const activities = await stravaFetch("https://www.strava.com/api/v3/athlete/activities?per_page=100&page=1", {
     headers: {
       Authorization: `Bearer ${token.access_token}`
     }
@@ -105,9 +197,13 @@ async function main() {
       url: `https://www.strava.com/activities/${activity.id}`
     }));
 
+  const weeklySummary = createWeeklySummary(activities);
+
   await mkdir(new URL("../data", import.meta.url), { recursive: true });
-  await writeFile(outputPath, `${JSON.stringify(recentRuns, null, 2)}\n`, "utf8");
+  await writeFile(activitiesOutputPath, `${JSON.stringify(recentRuns, null, 2)}\n`, "utf8");
+  await writeFile(summaryOutputPath, `${JSON.stringify(weeklySummary, null, 2)}\n`, "utf8");
   console.log(`Wrote ${recentRuns.length} Strava activities to data/strava-activities.json`);
+  console.log(`Wrote weekly mileage summary to data/strava-summary.json`);
 }
 
 main().catch(error => {
