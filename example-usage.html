@@ -225,5 +225,72 @@
 			});
 		})();
 	</script>
+
+	<!-- fix: replace images that fail to load with inline SVG data-URLs and re-render -->
+	<script>
+		(function(){
+			function escapeText(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+			function makeSvgDataUrl(text, w, h){
+				w = w || 480; h = h || 240;
+				var svg = "<svg xmlns='http://www.w3.org/2000/svg' width='"+w+"' height='"+h+"' viewBox='0 0 "+w+" "+h+"'>"
+				        + "<rect width='100%' height='100%' fill='#eee'/>"
+				        + "<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#666' font-family='Arial,Helvetica,sans-serif' font-size='20'>"
+				        + escapeText(text) + "</text></svg>";
+				return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+			}
+
+			function checkAndReplaceImages(projects, cb){
+				if (!projects || !projects.length) return cb(false);
+				var pending = 0, replaced = false;
+				projects.forEach(function(p){
+					if (!p || !p.image) return;
+					// only test absolute/remote URLs or anything not already a data: URL
+					if (String(p.image).startsWith('data:')) return;
+					pending++;
+					var img = new Image();
+					// do not set crossOrigin to avoid CORS errors interfering with load event
+					img.onload = function(){ if (--pending === 0) cb(replaced); };
+					img.onerror = function(){
+						// replace with inline SVG showing title
+						p.image = makeSvgDataUrl(p.title || 'No image');
+						replaced = true;
+						if (--pending === 0) cb(replaced);
+					};
+					// kick off load
+					img.src = p.image;
+					// safety: if browser cached and loaded synchronously
+					if (img.complete && img.naturalWidth) {
+						// loaded successfully
+						// nothing to do; decrement handled by onload but ensure onload runs
+					}
+				});
+				// if nothing to check
+				if (pending === 0) cb(replaced);
+			}
+
+			document.addEventListener('DOMContentLoaded', function(){
+				// run only when project data exists
+				var attempt = 0;
+				function waitForProjects(){
+					attempt++;
+					if (window.PROJECTS) {
+						checkAndReplaceImages(window.PROJECTS, function(changed){
+							if (changed) {
+								// prefer the real renderer if present
+								try { (window.renderProjects || window.applyFilter || window.__dynamicRendererLoaded && window.renderProjects)(window.PROJECTS); } catch(e){
+									// fallback: call exposed render or rely on fallback renderer already wired
+									if (typeof window.renderProjects === 'function') window.renderProjects(window.PROJECTS);
+								}
+							}
+						});
+						return;
+					}
+					// give up after a few tries
+					if (attempt < 6) setTimeout(waitForProjects, 300);
+				}
+				waitForProjects();
+			});
+		})();
+	</script>
 </body>
 </html>
