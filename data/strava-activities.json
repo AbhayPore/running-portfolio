@@ -1,11 +1,52 @@
 [
   {
-    "day": "Waiting for first sync",
-    "title": "Run the Strava workflow",
-    "distance": "0.0 km",
-    "pace": "-",
-    "effort": 0,
+    "day": "Yesterday",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "pace": "6:01/km",
+    "effort": 35,
     "type": "Run",
-    "date": "2026-05-02"
+    "date": "2026-05-01T07:13:58Z",
+    "url": "https://www.strava.com/activities/18326873911"
+  },
+  {
+    "day": "4 days ago",
+    "title": "Morning Run",
+    "distance": "6.5 km",
+    "pace": "5:24/km",
+    "effort": 51,
+    "type": "Run",
+    "date": "2026-04-28T06:14:49Z",
+    "url": "https://www.strava.com/activities/18286274524"
+  },
+  {
+    "day": "6 days ago",
+    "title": "TCS WORLD 10K BENGALURU",
+    "distance": "10.1 km",
+    "pace": "4:27/km",
+    "effort": 75,
+    "type": "Run",
+    "date": "2026-04-26T06:10:01Z",
+    "url": "https://www.strava.com/activities/18259708047"
+  },
+  {
+    "day": "6 days ago",
+    "title": "Morning Run",
+    "distance": "1.0 km",
+    "pace": "6:50/km",
+    "effort": 20,
+    "type": "Run",
+    "date": "2026-04-26T04:22:58Z",
+    "url": "https://www.strava.com/activities/18259707645"
+  },
+  {
+    "day": "24 Apr 2026",
+    "title": "Morning Run",
+    "distance": "5.5 km",
+    "pace": "5:09/km",
+    "effort": 54,
+    "type": "Run",
+    "date": "2026-04-24T06:24:46Z",
+    "url": "https://www.strava.com/activities/18233592518"
   }
 ]
