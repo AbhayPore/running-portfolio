@@ -35,7 +35,7 @@
 	<script src="./data/projects.js"></script>
 	<script src="./scripts/dynamic.js"></script>
 
-	<!-- debug/fallback: if data didn't load, try fetching and show a message -->
+	<!-- improved debug/fallback: report 404s, provide inline data and renderer if external files are missing -->
 	<script>
 		(function(){
 			function showError(msg){
@@ -53,26 +53,126 @@
 				}
 			}
 
+			// Minimal inline data fallback (used when ./data/projects.js is missing)
+			var INLINE_FALLBACK_PROJECTS = [
+				{ id: 'sample-1', title: 'Sample Project', description: 'Fallback sample project because data/projects.js failed to load.', link: '#', tags: ['sample'], image: '' }
+			];
+
+			// Minimal renderer fallback (used when ./scripts/dynamic.js is missing)
+			function minimalRenderProjects(list){
+				var container = document.getElementById('projects-list');
+				if (!container) return;
+				container.innerHTML = '';
+				if (!list || !list.length) {
+					var e = document.createElement('p');
+					e.textContent = 'No projects found.';
+					container.appendChild(e);
+					return;
+				}
+				list.forEach(function(p){
+					var a = document.createElement('a');
+					a.className = 'project-card';
+					a.href = p.link || '#';
+					a.setAttribute('aria-label', p.title || 'project');
+
+					if (p.image) {
+						var img = document.createElement('img');
+						img.className = 'project-image';
+						img.alt = p.title || '';
+						img.src = p.image;
+						img.loading = 'lazy';
+						a.appendChild(img);
+					}
+
+					var h = document.createElement('h3');
+					h.textContent = p.title || 'Untitled';
+					a.appendChild(h);
+
+					var d = document.createElement('p');
+					d.className = 'project-desc';
+					d.textContent = p.description || '';
+					a.appendChild(d);
+
+					if (p.tags && p.tags.length) {
+						var tagWrap = document.createElement('div');
+						tagWrap.className = 'project-tags';
+						p.tags.forEach(function(t){
+							var span = document.createElement('span');
+							span.className = 'project-tag';
+							span.textContent = t;
+							tagWrap.appendChild(span);
+						});
+						a.appendChild(tagWrap);
+					}
+					container.appendChild(a);
+				});
+			}
+
+			function minimalApplyFilter() {
+				var q = (document.getElementById('projects-search')?.value || '').toLowerCase();
+				var all = window.PROJECTS || INLINE_FALLBACK_PROJECTS;
+				if (!q) return minimalRenderProjects(all);
+				var filtered = all.filter(function(p){
+					return (p.title||'').toLowerCase().includes(q)
+						|| (p.description||'').toLowerCase().includes(q)
+						|| ((p.tags||[]).some && p.tags.some(function(t){ return t.toLowerCase().includes(q); }));
+				});
+				minimalRenderProjects(filtered);
+			}
+
 			document.addEventListener('DOMContentLoaded', function(){
-				// If the data script didn't define window.PROJECTS, try fetching it to produce a clearer error
+				// Check if data loaded
 				if (!window.PROJECTS) {
-					fetch('./data/projects.js').then(function(resp){
+					// try a fetch to produce clear Network errors in console and show friendly in-page error
+					fetch('./data/projects.js', {cache: 'no-store'}).then(function(resp){
 						if (!resp.ok) throw new Error('HTTP ' + resp.status);
 						return resp.text();
 					}).then(function(text){
 						try {
-							eval(text); // load the file content (simple fallback)
-							console.info('Loaded data/projects.js via fetch fallback');
-							if (window.PROJECTS && window.PROJECTS.length) {
-								// attempt to re-run renderer if present
-								if (typeof window.renderProjects === 'function') window.renderProjects(window.PROJECTS);
-							}
+							eval(text); // attempt to evaluate the file content
 						} catch (e) {
-							showError('Failed to evaluate data/projects.js: ' + e.message);
+							showError('Could not evaluate data/projects.js: ' + e.message);
+						}
+						if (!window.PROJECTS) {
+							showError('data/projects.js did not define window.PROJECTS. Using inline fallback data.');
+							window.PROJECTS = INLINE_FALLBACK_PROJECTS;
 						}
 					}).catch(function(err){
 						showError('Could not load ./data/projects.js — check that the file exists in the repo and path is correct. (' + err.message + ')');
+						window.PROJECTS = INLINE_FALLBACK_PROJECTS;
+					}).finally(function(){
+						// continue to renderer check after data attempt
+						ensureRendererAndRender();
 					});
+				} else {
+					ensureRendererAndRender();
+				}
+
+				function ensureRendererAndRender(){
+					// If the real renderer loaded it may have attached renderProjects; check common markers
+					var hasRenderer = (typeof window.renderProjects === 'function') || (typeof window.__dynamicRendererLoaded !== 'undefined');
+
+					if (!hasRenderer) {
+						// If scripts/dynamic.js did not attach a renderer, use the minimal fallback
+						showError('scripts/dynamic.js did not load or did not register a renderer. Using inline fallback renderer.');
+						// expose the minimal functions so other code can call them (and for devtools)
+						window.renderProjects = minimalRenderProjects;
+						window.applyFilter = minimalApplyFilter;
+					}
+
+					// initial render
+					try {
+						(window.renderProjects || minimalRenderProjects)(window.PROJECTS || INLINE_FALLBACK_PROJECTS);
+					} catch (e) {
+						showError('Rendering failed: ' + e.message);
+					}
+
+					// wire search input if not wired
+					var s = document.getElementById('projects-search');
+					if (s && !s._projectsSearchBound) {
+						s.addEventListener('input', function(){ (window.applyFilter || minimalApplyFilter)(); });
+						s._projectsSearchBound = true;
+					}
 				}
 			});
 		})();
