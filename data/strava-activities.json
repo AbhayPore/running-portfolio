@@ -1,7 +1,7 @@
 [
   {
-    "day": "Waiting for Strava sync",
-    "title": "Connect GitHub secrets",
+    "day": "Waiting for first sync",
+    "title": "Run the Strava workflow",
     "distance": "0.0 km",
     "pace": "-",
     "effort": 0,
