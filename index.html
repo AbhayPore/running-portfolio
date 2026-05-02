@@ -3,191 +3,667 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhay Pore | Runner</title>
+<title>Abhay Pore | Running Journal</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --bg: #080a0d;
+  --panel: #11161c;
+  --panel-soft: #171f27;
+  --line: rgba(255,255,255,0.12);
+  --text: #f6f3ed;
+  --muted: #b8c0c8;
+  --orange: #fc4c02;
+  --green: #87d37c;
+  --blue: #68b3ff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: #000;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.hero {
+  min-height: 92vh;
+  background: linear-gradient(to top, rgba(8,10,13,0.92), rgba(8,10,13,0.25) 48%, rgba(8,10,13,0.65)),
+              url('your-image-1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 28px;
+}
+
+.hero-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding-bottom: 44px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  background: rgba(8,10,13,0.72);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.nav-inner {
+  width: min(1120px, 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 28px;
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 820px;
+  font-size: clamp(44px, 8vw, 92px);
+  line-height: 0.95;
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+.hero-copy {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.button.primary {
+  background: var(--orange);
   color: #fff;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background: url('your-image-1.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: flex-end;
-  padding: 50px;
-  position: relative;
+.button.secondary {
+  border-color: var(--line);
+  background: rgba(255,255,255,0.08);
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 64px;
-  font-weight: 900;
-}
-
-.hero p {
-  font-size: 20px;
-  margin-top: 10px;
-  color: #ccc;
-}
-
-/* SECTION */
 .section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
+  padding: 76px 28px;
 }
 
-.section h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-  font-weight: 800;
+.section.alt {
+  background: #0d1116;
 }
 
-/* STATS */
-.stats {
+.section-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.section-header {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 28px;
 }
 
-.stat {
-  flex: 1;
-  min-width: 200px;
-  background: #111;
-  padding: 30px;
-  text-align: center;
-  border-radius: 10px;
+.section-header h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
 }
 
-.stat h3 {
-  font-size: 18px;
-  color: #aaa;
+.section-header p {
+  max-width: 460px;
+  color: var(--muted);
 }
 
-.stat p {
-  font-size: 32px;
-  font-weight: 800;
+.stats-grid,
+.blog-grid,
+.workout-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.stat,
+.post,
+.workout,
+.contact-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.stat span,
+.post time,
+.workout .meta,
+.contact-panel p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 34px;
+  line-height: 1;
   margin-top: 10px;
 }
 
-/* IMAGE BREAK */
-.full-image {
-  height: 70vh;
-  background: url('your-image-2.jpeg') center/cover no-repeat;
+.post {
+  display: flex;
+  flex-direction: column;
+  min-height: 245px;
 }
 
-/* STRAVA CTA */
-.strava {
-  text-align: center;
+.post h3,
+.workout h3 {
+  font-size: 21px;
+  line-height: 1.2;
+  margin: 10px 0;
 }
 
-.strava a {
-  display: inline-block;
-  margin-top: 20px;
-  background: #fc4c02;
-  padding: 15px 30px;
-  color: white;
+.post p,
+.workout p {
+  color: var(--muted);
+}
+
+.workout a {
+  color: var(--green);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 800;
+  margin-top: 14px;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
 }
 
-/* FOOTER */
+.workout-status {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.post button {
+  width: fit-content;
+  margin-top: auto;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.post-reader {
+  margin-top: 18px;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.post-reader h3 {
+  font-size: 28px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.post-reader time {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.post-reader p {
+  color: var(--muted);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+
+.photo {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.photo img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo figcaption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 12px;
+  background: rgba(8,10,13,0.76);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.progress-row {
+  margin-top: 14px;
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.bar {
+  height: 8px;
+  background: #252d35;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: var(--progress);
+  background: linear-gradient(90deg, var(--orange), var(--green));
+}
+
+.strava-link {
+  display: inline-flex;
+  margin-top: 26px;
+  color: var(--orange);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.contact-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-panel {
+  background: linear-gradient(135deg, rgba(252,76,2,0.16), rgba(104,179,255,0.12)), var(--panel);
+}
+
+.contact-grid h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  margin-top: 10px;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 18px 0 0;
+  color: var(--muted);
+}
+
+.contact-list li + li {
+  margin-top: 8px;
+}
+
+.contact-panel .button {
+  margin-top: 22px;
+}
+
 footer {
+  padding: 34px 28px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
   text-align: center;
-  padding: 40px;
-  background: #111;
-  color: #777;
+}
+
+@media (max-width: 820px) {
+  .nav-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .hero {
+    padding: 120px 20px 28px;
+  }
+
+  .section {
+    padding: 58px 20px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats-grid,
+  .blog-grid,
+  .workout-grid,
+  .gallery,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    min-height: 280px;
+  }
 }
 </style>
-
 </head>
 
 <body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>ABHAY PORE</h1>
-    <p>GRIT. DISCIPLINE. PROGRESSION.</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section">
-  <h2>THE RUNNER</h2>
-  <p style="color:#bbb; font-size:18px; line-height:1.6;">
-    Focused on pushing limits across 10K, Half Marathon, and beyond.  
-    Every run is data-driven. Every race is a test.  
-    The goal: continuous progression.
-  </p>
-</section>
-
-<!-- STATS -->
-<section class="section">
-  <h2>PERSONAL BESTS</h2>
-  <div class="stats">
-    <div class="stat">
-      <h3>10K</h3>
-      <p>43:12</p>
-    </div>
-    <div class="stat">
-      <h3>HALF MARATHON</h3>
-      <p>01:33:07</p>
-    </div>
-    <div class="stat">
-      <h3>FULL MARATHON</h3>
-      <p>03:27:45</p>
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="brand">Abhay Pore</div>
+    <div class="nav-links">
+      <a href="#journal">Journal</a>
+      <a href="#photos">Photos</a>
+      <a href="#strava">Strava</a>
+      <a href="#plans">Training Plans</a>
     </div>
   </div>
-</section>
+</nav>
 
-<!-- IMAGE BREAK -->
-<section class="full-image"></section>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Runner / Coach / Training Notes</div>
+    <h1>Running stories, workouts, and progress.</h1>
+    <p class="hero-copy">
+      I write about training blocks, race lessons, everyday mileage, and the discipline behind getting faster without losing the joy of the run.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="#journal">Read the blog</a>
+      <a class="button secondary" href="#plans">Ask for a plan</a>
+    </div>
+  </div>
+</header>
 
-<!-- STRAVA -->
-<section class="section strava">
-  <h2>FOLLOW THE JOURNEY</h2>
-  <p style="color:#aaa;">All runs. All data. No shortcuts.</p>
-  <a href="https://www.strava.com/athletes/18302706" target="_blank">
-    VIEW STRAVA
-  </a>
-</section>
+<main>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Current Focus</h2>
+        <p>Simple numbers that keep the training honest. Update these as your season changes.</p>
+      </div>
+      <div class="stats-grid" id="stats"></div>
+    </div>
+  </section>
 
-<!-- FUTURE -->
-<section class="section">
-  <h2>COMING SOON</h2>
-  <p style="color:#aaa;">
-    Race breakdowns. Training insights. Performance analytics.
-  </p>
-</section>
+  <section class="section alt" id="journal">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Running Blog</h2>
+        <p>Post race breakdowns, weekly reflections, gear notes, nutrition experiments, or lessons from hard sessions.</p>
+      </div>
+      <div class="blog-grid" id="blogPosts"></div>
+      <article class="post-reader" id="postReader" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <section class="section" id="photos">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Run Photos</h2>
+        <p>Add your race-day photos, long-run views, trail shots, and training moments here.</p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="strava">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Latest Strava Progress</h2>
+        <p>Last five runs, refreshed from Strava through a private GitHub Actions sync.</p>
+      </div>
+      <div class="workout-grid" id="workouts"></div>
+      <a class="strava-link" href="https://www.strava.com/athletes/18302706" target="_blank" rel="noopener">View full profile on Strava</a>
+    </div>
+  </section>
+
+  <section class="section" id="plans">
+    <div class="section-inner contact-grid">
+      <div>
+        <div class="eyebrow">Training Plans</div>
+        <h2>Need a plan for your next race?</h2>
+        <p class="hero-copy">
+          Share your goal distance, current weekly mileage, recent race time, target race date, and injury history. I can help shape a practical block for 5K, 10K, half marathon, or marathon training.
+        </p>
+      </div>
+      <div class="contact-panel">
+        <h3>Contact Me</h3>
+        <p>Send the basics and I will reply with next steps.</p>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:getpore@gmail.com?subject=Training%20Plan%20Request">getpore@gmail.com</a></li>
+          <li>Strava: <a href="https://www.strava.com/athletes/18302706" target="_blank" rel="noopener">Abhay Pore</a></li>
+          <li>Include: goal race, current pace, weekly volume, available days</li>
+        </ul>
+        <a class="button primary" href="mailto:getpore@gmail.com?subject=Training%20Plan%20Request&body=Goal%20race%3A%0ACurrent%20weekly%20mileage%3A%0ARecent%20race%20time%3A%0ATarget%20date%3A%0AAvailable%20training%20days%3A%0AInjury%20history%3A">Request a plan</a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>© 2026 Abhay Pore</p>
+  <p>&copy; 2026 Abhay Pore. Built for the miles ahead.</p>
 </footer>
 
+<script>
+const stats = [
+  { label: "Weekly target", value: "65 km" },
+  { label: "Next race", value: "10K" },
+  { label: "Current block", value: "Base + speed" }
+];
+
+const blogPosts = [
+  {
+    title: "What I Learned From My Latest Long Run",
+    date: "May 2, 2026",
+    summary: "A short reflection on pacing, fueling, and keeping the last third controlled.",
+    body: "The best part of this run was not the pace, it was how steady the last few kilometers felt. I kept the early effort relaxed, took fueling seriously, and finished with enough control to know the base is moving in the right direction."
+  },
+  {
+    title: "Tempo Day: Staying Smooth Under Pressure",
+    date: "April 29, 2026",
+    summary: "Notes from a threshold session and how I judge effort when the watch is not enough.",
+    body: "Tempo work is where patience gets tested. The target was strong but sustainable, so I focused on breathing rhythm, relaxed shoulders, and clean cadence instead of chasing every second on the watch."
+  },
+  {
+    title: "Building a Better 10K Engine",
+    date: "April 25, 2026",
+    summary: "The mix of easy mileage, strides, hill work, and patience that keeps progress moving.",
+    body: "The 10K rewards consistency. Easy volume builds durability, strides keep the legs quick, and hill reps add strength without needing every session to become a race."
+  }
+];
+
+const photos = [
+  { src: "your-image-1.jpg", caption: "Race effort and focus" },
+  { src: "your-image-2.jpeg", caption: "Training days that build the story" }
+];
+
+const fallbackWorkouts = [
+  { day: "Waiting for Strava sync", title: "Connect GitHub secrets", distance: "0.0 km", pace: "-", effort: 0 }
+];
+
+function renderStats() {
+  document.getElementById("stats").innerHTML = stats.map(item => `
+    <article class="stat">
+      <span>${item.label}</span>
+      <strong>${item.value}</strong>
+    </article>
+  `).join("");
+}
+
+function renderBlogPosts() {
+  document.getElementById("blogPosts").innerHTML = blogPosts.map((post, index) => `
+    <article class="post">
+      <time>${post.date}</time>
+      <h3>${post.title}</h3>
+      <p>${post.summary}</p>
+      <button type="button" data-post="${index}">Read post</button>
+    </article>
+  `).join("");
+
+  document.querySelectorAll("[data-post]").forEach(button => {
+    button.addEventListener("click", () => renderPostReader(Number(button.dataset.post)));
+  });
+
+  renderPostReader(0);
+}
+
+function renderPostReader(index) {
+  const post = blogPosts[index];
+  document.getElementById("postReader").innerHTML = `
+    <h3>${post.title}</h3>
+    <time>${post.date}</time>
+    <p>${post.body}</p>
+  `;
+}
+
+function renderGallery() {
+  document.getElementById("gallery").innerHTML = photos.map(photo => `
+    <figure class="photo">
+      <img src="${photo.src}" alt="${photo.caption}">
+      <figcaption>${photo.caption}</figcaption>
+    </figure>
+  `).join("");
+}
+
+function renderWorkoutStatus(message) {
+  document.getElementById("workouts").innerHTML = `
+    <div class="workout-status">${message}</div>
+  `;
+}
+
+function renderWorkouts(workouts) {
+  document.getElementById("workouts").innerHTML = workouts.map(workout => `
+    <article class="workout">
+      <div class="meta">${workout.day}</div>
+      <h3>${workout.title}</h3>
+      <p>${workout.distance} at ${workout.pace}</p>
+      <div class="progress-row">
+        <div class="progress-top">
+          <span>Effort</span>
+          <span>${workout.effort}%</span>
+        </div>
+        <div class="bar" aria-label="Effort ${workout.effort}%">
+          <span style="--progress: ${workout.effort}%"></span>
+        </div>
+      </div>
+      ${workout.url ? `<a href="${workout.url}" target="_blank" rel="noopener">Open on Strava</a>` : ""}
+    </article>
+  `).join("");
+}
+
+async function loadStravaWorkouts() {
+  renderWorkoutStatus("Loading latest Strava runs...");
+
+  try {
+    const response = await fetch("data/strava-activities.json", { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`Could not load Strava data (${response.status})`);
+    }
+
+    const workouts = await response.json();
+
+    if (!Array.isArray(workouts) || workouts.length === 0) {
+      renderWorkoutStatus("No recent Strava runs found yet.");
+      return;
+    }
+
+    renderWorkouts(workouts.slice(0, 5));
+  } catch (error) {
+    console.warn(error);
+    renderWorkouts(fallbackWorkouts);
+  }
+}
+
+renderStats();
+renderBlogPosts();
+renderGallery();
+loadStravaWorkouts();
+</script>
 </body>
 </html>
