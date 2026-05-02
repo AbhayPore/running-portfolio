@@ -31,8 +31,51 @@
 		</section>
 	</main>
 
-	<!-- Include data first, then the dynamic renderer -->
-	<script src="data/projects.js"></script>
-	<script src="scripts/dynamic.js"></script>
+	<!-- Include data first, then the dynamic renderer (use explicit relative paths) -->
+	<script src="./data/projects.js"></script>
+	<script src="./scripts/dynamic.js"></script>
+
+	<!-- debug/fallback: if data didn't load, try fetching and show a message -->
+	<script>
+		(function(){
+			function showError(msg){
+				console.error(msg);
+				var container = document.getElementById('projects-list');
+				if (!container) return;
+				if (!document.getElementById('projects-error')){
+					var p = document.createElement('p');
+					p.id = 'projects-error';
+					p.style.color = '#a00';
+					p.style.padding = '8px';
+					p.style.background = '#fee';
+					p.textContent = msg;
+					container.parentNode.insertBefore(p, container);
+				}
+			}
+
+			document.addEventListener('DOMContentLoaded', function(){
+				// If the data script didn't define window.PROJECTS, try fetching it to produce a clearer error
+				if (!window.PROJECTS) {
+					fetch('./data/projects.js').then(function(resp){
+						if (!resp.ok) throw new Error('HTTP ' + resp.status);
+						return resp.text();
+					}).then(function(text){
+						try {
+							eval(text); // load the file content (simple fallback)
+							console.info('Loaded data/projects.js via fetch fallback');
+							if (window.PROJECTS && window.PROJECTS.length) {
+								// attempt to re-run renderer if present
+								if (typeof window.renderProjects === 'function') window.renderProjects(window.PROJECTS);
+							}
+						} catch (e) {
+							showError('Failed to evaluate data/projects.js: ' + e.message);
+						}
+					}).catch(function(err){
+						showError('Could not load ./data/projects.js — check that the file exists in the repo and path is correct. (' + err.message + ')');
+					});
+				}
+			});
+		})();
+	</script>
 </body>
 </html>
