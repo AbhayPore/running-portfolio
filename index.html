@@ -290,6 +290,21 @@ h1 {
   color: var(--muted);
 }
 
+.post-reader p + p,
+.post-reader ul + p,
+.post-reader p + ul {
+  margin-top: 14px;
+}
+
+.post-reader ul {
+  color: var(--muted);
+  padding-left: 20px;
+}
+
+.post-reader li + li {
+  margin-top: 6px;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
@@ -610,22 +625,43 @@ const baseStats = [
 
 const blogPosts = [
   {
-    title: "What I Learned From My Latest Long Run",
+    title: "TCS World 10K Bengaluru - Race Day Experience",
     date: "May 2, 2026",
-    summary: "A short reflection on pacing, fueling, and keeping the last third controlled.",
-    body: "The best part of this run was not the pace, it was how steady the last few kilometers felt. I kept the early effort relaxed, took fueling seriously, and finished with enough control to know the base is moving in the right direction."
-  },
-  {
-    title: "Tempo Day: Staying Smooth Under Pressure",
-    date: "April 29, 2026",
-    summary: "Notes from a threshold session and how I judge effort when the watch is not enough.",
-    body: "Tempo work is where patience gets tested. The target was strong but sustainable, so I focused on breathing rhythm, relaxed shoulders, and clean cadence instead of chasing every second on the watch."
-  },
-  {
-    title: "Building a Better 10K Engine",
-    date: "April 25, 2026",
-    summary: "The mix of easy mileage, strides, hill work, and patience that keeps progress moving.",
-    body: "The 10K rewards consistency. Easy volume builds durability, strides keep the legs quick, and hill reps add strength without needing every session to become a race."
+    summary: "I went in chasing sub-43 and came away with a 44:41, a crowded start, and a race full of useful lessons.",
+    body: `
+      <p>Last Sunday, I lined up for one of India's most iconic races, the TCS World 10K Bengaluru, with a clear goal in mind: break the 43-minute barrier.</p>
+
+      <p><strong>Pre-Race Day</strong></p>
+      <p>I landed in Bengaluru a day before the race and headed straight from the airport to the expo for bib collection. The process was smooth and well-organized. The expo itself had a great vibe, packed with running gear, brand activations, and plenty of freebies. It really sets the tone for race weekend.</p>
+      <p>After that, I checked into my hotel near UB City. The rest of the day was all about conserving energy, staying off my feet, hydrating well, and mentally preparing. I made sure to sleep early around 9 PM, knowing the next day would start very early.</p>
+
+      <p><strong>Race Morning</strong></p>
+      <p>The alarm went off at 3 AM.</p>
+      <p>After getting ready, we left for the start line at around 4:15 AM. Since it was just about 2 km away, we walked 1 km and jogged the rest, a nice way to loosen up before the race.</p>
+      <p>Runners slowly started gathering, and by 5:15 AM, the holding areas opened. I was placed in the A wave, scheduled to start at 6:10 AM.</p>
+      <p>But this is where things got a bit tricky. The holding area was extremely crowded. For almost an hour, it was difficult to even move around, and something as basic as finding a restroom was not possible. By the time the race started, that discomfort was already in the back of my mind.</p>
+
+      <p><strong>The Race</strong></p>
+      <p>The race started right on time.</p>
+      <p>However, the combination of discomfort and a densely packed A wave made it hard to settle into a rhythm early on. I had to push harder than planned in the first 2 km just to break free from the crowd.</p>
+      <p>That effort came at a cost. By the time I hit the 5 km mark, which includes a noticeable elevation, I could feel the fatigue building up. From there on, it became more about holding pace than attacking it.</p>
+
+      <p><strong>The Finish</strong></p>
+      <p>My target was clear: sub-43 minutes. But given the conditions and how the race unfolded, I crossed the finish line in 44:41.</p>
+      <p>Not the time I had trained for, but definitely a race full of lessons.</p>
+
+      <p><strong>Takeaways</strong></p>
+      <ul>
+        <li>Positioning at the start line matters more than you think.</li>
+        <li>Small logistical issues, like access to restrooms, can impact performance.</li>
+        <li>Early pacing decisions can shape the entire race.</li>
+        <li>Sometimes, adapting mid-race is the real win.</li>
+      </ul>
+
+      <p><strong>What's Next</strong></p>
+      <p>This one did not go exactly as planned, but that is part of the journey.</p>
+      <p>The fitness is there. The sub-43 will come. And when it does, it will be even more satisfying.</p>
+    `
   }
 ];
 
@@ -709,7 +745,7 @@ function renderPostReader(index) {
   document.getElementById("postReader").innerHTML = `
     <h3>${post.title}</h3>
     <time>${post.date}</time>
-    <p>${post.body}</p>
+    ${post.body.trim().startsWith("<") ? post.body : `<p>${post.body}</p>`}
   `;
 }
 
