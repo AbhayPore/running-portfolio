@@ -84,4 +84,10 @@
 		const s = document.getElementById(searchId);
 		if (s) s.addEventListener('input', applyFilter);
 	});
+	
+	// Register renderer so example-usage.html fallback can detect the real renderer
+	// (expose only when present)
+	window.renderProjects = renderProjects;
+	window.applyFilter = applyFilter;
+	window.__dynamicRendererLoaded = true;
 })();

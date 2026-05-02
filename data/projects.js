@@ -6,7 +6,8 @@ window.PROJECTS = [
 		"description": "A lightweight run logging app with charts and pace calculations.",
 		"link": "projects/run-tracker/",
 		"tags": ["pwa","fitness"],
-		"image": "assets/run-tracker.png"
+		// Use a stable placeholder to avoid 404 while the real image is missing. Replace with "assets/run-tracker.png" when you add the file.
+		"image": "https://via.placeholder.com/480x240?text=Run+Tracker"
 	},
 	{
 		"id": "route-visualizer",
@@ -14,6 +15,6 @@ window.PROJECTS = [
 		"description": "Visualize running routes on an interactive map.",
 		"link": "projects/route-visualizer/",
 		"tags": ["map","data"],
-		"image": "assets/route-visualizer.png"
+		"image": "https://via.placeholder.com/480x240?text=Route+Visualizer"
 	}
 ];
