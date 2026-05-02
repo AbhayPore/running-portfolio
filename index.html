@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhay Pore | Runner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('your-image-1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 50px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  min-width: 200px;
+  background: #111;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.stat h3 {
+  font-size: 18px;
+  color: #aaa;
+}
+
+.stat p {
+  font-size: 32px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+/* IMAGE BREAK */
+.full-image {
+  height: 70vh;
+  background: url('your-image-2.jpeg') center/cover no-repeat;
+}
+
+/* STRAVA CTA */
+.strava {
+  text-align: center;
+}
+
+.strava a {
+  display: inline-block;
+  margin-top: 20px;
+  background: #fc4c02;
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #111;
+  color: #777;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>ABHAY PORE</h1>
+    <p>GRIT. DISCIPLINE. PROGRESSION.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2>THE RUNNER</h2>
+  <p style="color:#bbb; font-size:18px; line-height:1.6;">
+    Focused on pushing limits across 10K, Half Marathon, and beyond.  
+    Every run is data-driven. Every race is a test.  
+    The goal: continuous progression.
+  </p>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <h2>PERSONAL BESTS</h2>
+  <div class="stats">
+    <div class="stat">
+      <h3>10K</h3>
+      <p>43:12</p>
+    </div>
+    <div class="stat">
+      <h3>HALF MARATHON</h3>
+      <p>01:33:07</p>
+    </div>
+    <div class="stat">
+      <h3>FULL MARATHON</h3>
+      <p>03:27:45</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<section class="full-image"></section>
+
+<!-- STRAVA -->
+<section class="section strava">
+  <h2>FOLLOW THE JOURNEY</h2>
+  <p style="color:#aaa;">All runs. All data. No shortcuts.</p>
+  <a href="https://www.strava.com/athletes/18302706" target="_blank">
+    VIEW STRAVA
+  </a>
+</section>
+
+<!-- FUTURE -->
+<section class="section">
+  <h2>COMING SOON</h2>
+  <p style="color:#aaa;">
+    Race breakdowns. Training insights. Performance analytics.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Abhay Pore</p>
+</footer>
+
+</body>
+</html>
