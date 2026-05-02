@@ -33,47 +33,6 @@
 
 	<!-- Include data first, then the dynamic renderer (use explicit relative paths) -->
 	<script src="./data/projects.js"></script>
-
-	<!-- normalize images: replace external/http(s) image URLs (e.g. via.placeholder.com) with inline SVG data-URLs -->
-	<script>
-		(function(){
-			function escapeText(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-			function makeSvgDataUrl(text, w, h){
-				w = w || 480; h = h || 240;
-				var svg = "<svg xmlns='http://www.w3.org/2000/svg' width='"+w+"' height='"+h+"' viewBox='0 0 "+w+" "+h+"'>"
-				        + "<rect width='100%' height='100%' fill='#eee'/>"
-				        + "<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#666' font-family='Arial,Helvetica,sans-serif' font-size='20'>"
-				        + escapeText(text) + "</text></svg>";
-				return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-			}
-
-			function normalizeImages(){
-				var projects = window.PROJECTS || [];
-				for (var i=0;i<projects.length;i++){
-					var p = projects[i];
-					if (!p || !p.image || typeof p.image !== 'string') continue;
-					var url = p.image.trim();
-					// replace remote placeholders and any http(s) absolute URLs with inline SVG to avoid cross-origin failures
-					if (url.indexOf('via.placeholder.com') !== -1 || /^https?:\/\//i.test(url)){
-						p.image = makeSvgDataUrl(p.title || 'Project', 480, 240);
-					}
-				}
-			}
-
-			// data/projects.js is a blocking script, so window.PROJECTS will usually exist now.
-			if (window.PROJECTS) {
-				normalizeImages();
-			} else {
-				// fallback: wait briefly for data script to set window.PROJECTS
-				var tries = 0, t = setInterval(function(){
-					tries++;
-					if (window.PROJECTS) { normalizeImages(); clearInterval(t); }
-					if (tries > 10) clearInterval(t);
-				}, 100);
-			}
-		})();
-	</script>
-
 	<script src="./scripts/dynamic.js"></script>
 
 	<!-- improved debug/fallback: report 404s, provide inline data and renderer if external files are missing -->
@@ -263,47 +222,6 @@
 				}, Promise.resolve()).then(function(){
 					logLine('Diagnostics finished. If any URL shows 404 or ERROR, copy it here.');
 				});
-			});
-		})();
-	</script>
-
-	<!-- explanation helper: convert diagnostics errors into short actionable guidance -->
-	<script>
-		(function(){
-			function makeBox(html){
-				var b = document.getElementById('projects-explain');
-				if (b) return b;
-				b = document.createElement('div');
-				b.id = 'projects-explain';
-				b.style.cssText = 'position:fixed;right:8px;bottom:calc(8px + 42% + 8px);max-width:45%;background:#fff;border:1px solid #c33;padding:10px;font-size:13px;line-height:1.4;color:#222;z-index:100000';
-				document.body.appendChild(b);
-				return b;
-			}
-
-			function showExplanation(msg){
-				var b = makeBox();
-				b.innerHTML = '<strong>Network error explanation</strong><p style="margin:6px 0 0 0;">' + msg + '</p>';
-			}
-
-			function explainDiagnosticsText(text){
-				text = String(text || '');
-				// common conditions observed in your diagnostics
-				if (text.indexOf('ERR_CONNECTION_CLOSED') !== -1 || text.indexOf('Failed to fetch') !== -1 || text.indexOf('ERROR: Failed to fetch') !== -1) {
-					showExplanation(
-						'The browser failed to fetch external images (via.placeholder.com). Possible causes: network or firewall blocking the remote host, the remote service refusing connections, browser extensions/privacy blockers, or intermittent connectivity. Quick fixes: open the image URL directly in the browser, try Incognito/disable extensions, use local images committed to the repo and reference them with relative paths (assets/...), or replace images with data-URLs to avoid external requests.'
-					);
-					return;
-				}
-				// if no known issue found, do nothing
-			}
-
-			// run after diagnostics populate
-			document.addEventListener('DOMContentLoaded', function(){
-				// allow the diagnostics script to run first
-				setTimeout(function(){
-					var diag = document.getElementById('projects-diag');
-					if (diag) explainDiagnosticsText(diag.textContent);
-				}, 700);
 			});
 		})();
 	</script>
