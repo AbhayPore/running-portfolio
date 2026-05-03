@@ -195,6 +195,7 @@ h1 {
 }
 
 .stats-grid,
+.pb-grid,
 .blog-grid,
 .workout-grid,
 .contact-grid {
@@ -204,6 +205,7 @@ h1 {
 }
 
 .stat,
+.pb-card,
 .post,
 .workout,
 .contact-panel {
@@ -226,6 +228,37 @@ h1 {
   font-size: 34px;
   line-height: 1;
   margin-top: 10px;
+}
+
+.pb-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pb-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  min-height: 118px;
+}
+
+.pb-card h3 {
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.pb-card time {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.pb-card strong {
+  color: var(--green);
+  font-size: 25px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .post {
@@ -500,6 +533,7 @@ footer {
   }
 
   .stats-grid,
+  .pb-grid,
   .blog-grid,
   .workout-grid,
   .contact-grid {
@@ -534,6 +568,7 @@ footer {
   <div class="nav-inner">
     <div class="brand">Abhay Pore</div>
     <div class="nav-links">
+      <a href="#bests">Bests</a>
       <a href="#journal">Journal</a>
       <a href="#photos">Photos</a>
       <a href="#strava">Strava</a>
@@ -567,7 +602,46 @@ footer {
     </div>
   </section>
 
-  <section class="section alt" id="journal">
+  <section class="section alt" id="bests">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Personal Bests</h2>
+        <p>Fastest race times so far.</p>
+      </div>
+      <div class="pb-grid">
+        <article class="pb-card">
+          <div>
+            <h3>5km</h3>
+            <time>27 Nov 2024</time>
+          </div>
+          <strong>20:42</strong>
+        </article>
+        <article class="pb-card">
+          <div>
+            <h3>10km</h3>
+            <time>1 Dec 2024</time>
+          </div>
+          <strong>43:12</strong>
+        </article>
+        <article class="pb-card">
+          <div>
+            <h3>Half Marathon</h3>
+            <time>1 Dec 2024</time>
+          </div>
+          <strong>1:33:07</strong>
+        </article>
+        <article class="pb-card">
+          <div>
+            <h3>Marathon</h3>
+            <time>23 Feb 2025</time>
+          </div>
+          <strong>3:27:45</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="journal">
     <div class="section-inner">
       <div class="section-header">
         <h2>Running Blog</h2>
@@ -578,7 +652,7 @@ footer {
     </div>
   </section>
 
-  <section class="section" id="photos">
+  <section class="section alt" id="photos">
     <div class="section-inner">
       <div class="section-header">
         <h2>Run Photos</h2>
@@ -588,7 +662,7 @@ footer {
     </div>
   </section>
 
-  <section class="section alt" id="strava">
+  <section class="section" id="strava">
     <div class="section-inner">
       <div class="section-header">
         <h2>Latest Strava Progress</h2>
@@ -599,7 +673,7 @@ footer {
     </div>
   </section>
 
-  <section class="section" id="plans">
+  <section class="section alt" id="plans">
     <div class="section-inner contact-grid">
       <div>
         <div class="eyebrow">Training Plans</div>
@@ -685,6 +759,13 @@ const photos = [
   { src: "photos/redbull-arch-03.jpg", caption: "Steady stride near the arch", focus: "43% 54%" },
   { src: "photos/dark-road-01.jpg", caption: "Focused miles after dark", focus: "53% 38%" },
   { src: "photos/dark-road-close.jpg", caption: "Close-up from the night course", focus: "46% 35%" },
+  { src: "photos/db4d9ff9fc5876b5bd0c4cea67fac3ba.jpg", caption: "Race-day memories from the course", focus: "center" },
+  { src: "photos/f0735b8d76bdc8703d9e208ec2ca8fae.jpg", caption: "Another frame from the running journey", focus: "center" },
+  { src: "photos/PNKC00638.jpeg", caption: "Miles, effort, and race-day energy", focus: "center" },
+  { src: "photos/YPX.jpg", caption: "Training moments along the way", focus: "center" },
+  { src: "photos/Z7D.jpg", caption: "A run worth remembering", focus: "center" },
+  { src: "photos/DSC_4215.JPG.webp", caption: "Running through another strong day", focus: "center" },
+  { src: "photos/DSC_1700.JPG", caption: "One more finish-line memory", focus: "center" },
   { src: "your-image-1.jpg", caption: "Race effort and focus", focus: "58% 18%" },
   { src: "your-image-2.jpeg", caption: "Training days that build the story", focus: "center" }
 ];
