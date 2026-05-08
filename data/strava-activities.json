@@ -1,5 +1,15 @@
 [
   {
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "pace": "6:50/km",
+    "effort": 20,
+    "type": "Run",
+    "date": "2026-05-08T06:52:29Z",
+    "url": "https://www.strava.com/activities/18421575862"
+  },
+  {
     "day": "2 days ago",
     "title": "Morning Run",
     "distance": "8.0 km",
@@ -38,15 +48,5 @@
     "type": "Run",
     "date": "2026-05-01T07:13:58Z",
     "url": "https://www.strava.com/activities/18326873911"
-  },
-  {
-    "day": "28 Apr 2026",
-    "title": "Morning Run",
-    "distance": "6.5 km",
-    "pace": "5:24/km",
-    "effort": 51,
-    "type": "Run",
-    "date": "2026-04-28T06:14:49Z",
-    "url": "https://www.strava.com/activities/18286274524"
   }
 ]
