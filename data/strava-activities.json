@@ -1,6 +1,16 @@
 [
   {
-    "day": "Yesterday",
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "10.0 km",
+    "pace": "5:10/km",
+    "effort": 67,
+    "type": "Run",
+    "date": "2026-05-12T05:57:57Z",
+    "url": "https://www.strava.com/activities/18471376209"
+  },
+  {
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "15.0 km",
     "pace": "5:56/km",
@@ -10,7 +20,7 @@
     "url": "https://www.strava.com/activities/18446515922"
   },
   {
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "pace": "6:50/km",
@@ -20,7 +30,7 @@
     "url": "https://www.strava.com/activities/18421575862"
   },
   {
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "8.0 km",
     "pace": "5:45/km",
@@ -38,15 +48,5 @@
     "type": "Run",
     "date": "2026-05-04T06:05:30Z",
     "url": "https://www.strava.com/activities/18366693747"
-  },
-  {
-    "day": "3 May 2026",
-    "title": "Morning Run",
-    "distance": "10.2 km",
-    "pace": "6:12/km",
-    "effort": 47,
-    "type": "Run",
-    "date": "2026-05-03T08:20:42Z",
-    "url": "https://www.strava.com/activities/18353979102"
   }
 ]
