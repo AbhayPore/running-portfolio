@@ -1,6 +1,6 @@
 [
   {
-    "day": "Today",
+    "day": "Yesterday",
     "title": "Morning Run",
     "distance": "9.1 km",
     "pace": "6:02/km",
@@ -10,7 +10,7 @@
     "url": "https://www.strava.com/activities/18485384434"
   },
   {
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "10.0 km",
     "pace": "5:10/km",
@@ -20,7 +20,7 @@
     "url": "https://www.strava.com/activities/18471376209"
   },
   {
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "15.0 km",
     "pace": "5:56/km",
@@ -30,7 +30,7 @@
     "url": "https://www.strava.com/activities/18446515922"
   },
   {
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "pace": "6:50/km",
