@@ -1055,6 +1055,9 @@ async function renderRunMap(activities) {
     attribution: "&copy; OpenStreetMap &copy; CARTO"
   }).addTo(map);
 
+  map.invalidateSize();
+  setTimeout(() => map.invalidateSize(), 200);
+
   const bounds = [];
   const newestDate = routes[0]?.date ? new Date(routes[0].date).toLocaleDateString("en-IN", {
     day: "numeric",
