@@ -1002,18 +1002,33 @@ function loadLeafletAssets() {
   if (leafletLoadPromise) return leafletLoadPromise;
 
   leafletLoadPromise = new Promise((resolve, reject) => {
+    let cssLoaded = false;
+    let scriptLoaded = false;
+
+    const checkReady = () => {
+      if (cssLoaded && scriptLoaded) resolve();
+    };
+
     const stylesheet = document.createElement("link");
     stylesheet.rel = "stylesheet";
     stylesheet.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
     stylesheet.integrity = "sha256-p4NxAoJBhIINfQKBRXUXVOM0vF6z5jK6C+v5H5TaB6Q=";
     stylesheet.crossOrigin = "";
+    stylesheet.onload = () => {
+      cssLoaded = true;
+      checkReady();
+    };
+    stylesheet.onerror = () => reject(new Error("Could not load the map stylesheet"));
     document.head.appendChild(stylesheet);
 
     const script = document.createElement("script");
     script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
     script.integrity = "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=";
     script.crossOrigin = "";
-    script.onload = resolve;
+    script.onload = () => {
+      scriptLoaded = true;
+      checkReady();
+    };
     script.onerror = () => reject(new Error("Could not load the map library"));
     document.body.appendChild(script);
   });
@@ -1050,13 +1065,39 @@ async function renderRunMap(activities) {
     zoomControl: true
   });
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+  const tileUrl = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+  const fallbackTileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  let tileErrorCount = 0;
+  let tileLayer = L.tileLayer(tileUrl, {
     maxZoom: 19,
-    attribution: "&copy; OpenStreetMap &copy; CARTO"
+    attribution: "&copy; OpenStreetMap &copy; CARTO",
+    errorTileUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAuMBgkL0hJkAAAAASUVORK5CYII="
   }).addTo(map);
 
-  map.invalidateSize();
-  setTimeout(() => map.invalidateSize(), 200);
+  map.on("load", () => map.invalidateSize(true));
+  setTimeout(() => map.invalidateSize(true), 300);
+
+  tileLayer.on("tileerror", () => {
+    tileErrorCount += 1;
+
+    if (tileErrorCount === 1) {
+      document.getElementById("mapSummary").innerHTML = `
+        <span>Some map tiles failed to load. Retrying with fallback tiles...</span>
+      `;
+    }
+
+    if (tileErrorCount === 10) {
+      map.removeLayer(tileLayer);
+      tileLayer = L.tileLayer(fallbackTileUrl, {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors',
+        errorTileUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/w8AAuMBgkL0hJkAAAAASUVORK5CYII="
+      }).addTo(map);
+      tileLayer.on("tileerror", () => {
+        console.warn("Fallback tile load failed.");
+      });
+    }
+  });
 
   const bounds = [];
   const newestDate = routes[0]?.date ? new Date(routes[0].date).toLocaleDateString("en-IN", {
@@ -1087,6 +1128,9 @@ async function renderRunMap(activities) {
     padding: [28, 28],
     maxZoom: 13
   });
+
+  map.invalidateSize();
+  setTimeout(() => map.invalidateSize(), 200);
 
   const totalKm = routes.reduce((sum, activity) => sum + parseDistanceMeters(activity), 0) / 1000;
   document.getElementById("mapSummary").innerHTML = `
