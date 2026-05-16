@@ -1,52 +1,52 @@
 [
   {
-    "day": "Today",
+    "day": "3 days ago",
     "title": "Morning Run",
-    "distance": "10.2 km",
-    "pace": "6:12/km",
+    "distance": "9.1 km",
+    "pace": "6:02/km",
     "effort": 47,
     "type": "Run",
-    "date": "2026-05-03T08:20:42Z",
-    "url": "https://www.strava.com/activities/18353979102"
+    "date": "2026-05-13T06:00:11Z",
+    "url": "https://www.strava.com/activities/18485384434"
   },
   {
-    "day": "2 days ago",
+    "day": "4 days ago",
+    "title": "Morning Run",
+    "distance": "10.0 km",
+    "pace": "5:10/km",
+    "effort": 67,
+    "type": "Run",
+    "date": "2026-05-12T05:57:57Z",
+    "url": "https://www.strava.com/activities/18471376209"
+  },
+  {
+    "day": "6 days ago",
+    "title": "Morning Run",
+    "distance": "15.0 km",
+    "pace": "5:56/km",
+    "effort": 66,
+    "type": "Run",
+    "date": "2026-05-10T07:14:19Z",
+    "url": "https://www.strava.com/activities/18446515922"
+  },
+  {
+    "day": "8 May 2026",
     "title": "Morning Run",
     "distance": "5.0 km",
-    "pace": "6:01/km",
-    "effort": 35,
-    "type": "Run",
-    "date": "2026-05-01T07:13:58Z",
-    "url": "https://www.strava.com/activities/18326873911"
-  },
-  {
-    "day": "5 days ago",
-    "title": "Morning Run",
-    "distance": "6.5 km",
-    "pace": "5:24/km",
-    "effort": 51,
-    "type": "Run",
-    "date": "2026-04-28T06:14:49Z",
-    "url": "https://www.strava.com/activities/18286274524"
-  },
-  {
-    "day": "26 Apr 2026",
-    "title": "TCS WORLD 10K BENGALURU",
-    "distance": "10.1 km",
-    "pace": "4:27/km",
-    "effort": 75,
-    "type": "Run",
-    "date": "2026-04-26T06:10:01Z",
-    "url": "https://www.strava.com/activities/18259708047"
-  },
-  {
-    "day": "26 Apr 2026",
-    "title": "Morning Run",
-    "distance": "1.0 km",
     "pace": "6:50/km",
     "effort": 20,
     "type": "Run",
-    "date": "2026-04-26T04:22:58Z",
-    "url": "https://www.strava.com/activities/18259707645"
+    "date": "2026-05-08T06:52:29Z",
+    "url": "https://www.strava.com/activities/18421575862"
+  },
+  {
+    "day": "6 May 2026",
+    "title": "Morning Run",
+    "distance": "8.0 km",
+    "pace": "5:45/km",
+    "effort": 49,
+    "type": "Run",
+    "date": "2026-05-06T06:04:40Z",
+    "url": "https://www.strava.com/activities/18393490583"
   }
 ]
