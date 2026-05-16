@@ -1206,6 +1206,8 @@ async function loadStravaWorkouts() {
 
     cachedStravaWorkouts = workouts;
     renderMapLoadButton();
+    shouldRenderRunMap = true;
+    maybeRenderRunMap();
     renderWorkouts(workouts.slice(0, 5));
   } catch (error) {
     console.warn(error);
