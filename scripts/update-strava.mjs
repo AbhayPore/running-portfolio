@@ -8,7 +8,7 @@ const {
 
 const activitiesOutputPath = new URL("../data/strava-activities.json", import.meta.url);
 const summaryOutputPath = new URL("../data/strava-summary.json", import.meta.url);
-const RUN_LIMIT = 30;
+const RUN_LIMIT = 15;
 
 function requireEnv(name, value) {
   if (!value) {

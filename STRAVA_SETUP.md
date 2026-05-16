@@ -1,6 +1,6 @@
 # Strava Data Setup
 
-The website reads recent workouts from `data/strava-activities.json`. The sync stores the latest 30 runs and their Strava summary polylines so the homepage can draw the blue route map.
+The website reads recent workouts from `data/strava-activities.json`. The sync stores the latest 15 runs and their Strava summary polylines so the homepage can draw the blue route map.
 
 For real data on GitHub Pages, the private Strava API call runs in GitHub Actions and commits a refreshed JSON file. Add these repository secrets:
 
