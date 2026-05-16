@@ -346,6 +346,20 @@ h1 {
   vector-effect: non-scaling-stroke;
 }
 
+.route-map-svg .route-cell {
+  fill: rgba(255,255,255,0.012);
+  stroke: rgba(255,255,255,0.055);
+  stroke-width: 1;
+}
+
+.route-map-svg text {
+  fill: rgba(246,243,237,0.72);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
 .map-summary {
   display: flex;
   flex-wrap: wrap;
@@ -965,18 +979,49 @@ function mercatorY(lat) {
   return Math.log(Math.tan(Math.PI / 4 + radians / 2));
 }
 
-function projectPoint([lat, lng], bounds, width, height, padding) {
+function getPointBounds(points) {
+  return points.reduce((result, [lat, lng]) => ({
+    minLat: Math.min(result.minLat, lat),
+    maxLat: Math.max(result.maxLat, lat),
+    minLng: Math.min(result.minLng, lng),
+    maxLng: Math.max(result.maxLng, lng),
+    minY: Math.min(result.minY, mercatorY(lat)),
+    maxY: Math.max(result.maxY, mercatorY(lat))
+  }), {
+    minLat: Infinity,
+    maxLat: -Infinity,
+    minLng: Infinity,
+    maxLng: -Infinity,
+    minY: Infinity,
+    maxY: -Infinity
+  });
+}
+
+function projectPoint([lat, lng], bounds, box) {
   const xRange = bounds.maxLng - bounds.minLng || 1;
   const yRange = bounds.maxY - bounds.minY || 1;
-  const x = padding + ((lng - bounds.minLng) / xRange) * (width - padding * 2);
-  const y = height - padding - ((mercatorY(lat) - bounds.minY) / yRange) * (height - padding * 2);
+  const routeRatio = xRange / yRange;
+  const boxRatio = box.width / box.height;
+  let drawWidth = box.width;
+  let drawHeight = box.height;
+
+  if (routeRatio > boxRatio) {
+    drawHeight = box.width / routeRatio;
+  } else {
+    drawWidth = box.height * routeRatio;
+  }
+
+  const xOffset = box.x + (box.width - drawWidth) / 2;
+  const yOffset = box.y + (box.height - drawHeight) / 2;
+  const x = xOffset + ((lng - bounds.minLng) / xRange) * drawWidth;
+  const y = yOffset + drawHeight - ((mercatorY(lat) - bounds.minY) / yRange) * drawHeight;
 
   return [x, y];
 }
 
-function createRoutePath(points, bounds, width, height, padding) {
+function createRoutePath(points, bounds, box) {
   return points.map((point, index) => {
-    const [x, y] = projectPoint(point, bounds, width, height, padding);
+    const [x, y] = projectPoint(point, bounds, box);
     return `${index === 0 ? "M" : "L"}${x.toFixed(1)} ${y.toFixed(1)}`;
   }).join(" ");
 }
@@ -1004,23 +1049,10 @@ function renderRunMap(activities) {
 
   const width = 1120;
   const height = 620;
-  const padding = 42;
-  const allPoints = routes.flatMap(activity => activity.points);
-  const bounds = allPoints.reduce((result, [lat, lng]) => ({
-    minLat: Math.min(result.minLat, lat),
-    maxLat: Math.max(result.maxLat, lat),
-    minLng: Math.min(result.minLng, lng),
-    maxLng: Math.max(result.maxLng, lng),
-    minY: Math.min(result.minY, mercatorY(lat)),
-    maxY: Math.max(result.maxY, mercatorY(lat))
-  }), {
-    minLat: Infinity,
-    maxLat: -Infinity,
-    minLng: Infinity,
-    maxLng: -Infinity,
-    minY: Infinity,
-    maxY: -Infinity
-  });
+  const columns = 5;
+  const rows = Math.max(1, Math.ceil(routes.length / columns));
+  const cellWidth = width / columns;
+  const cellHeight = height / rows;
   const newestDate = routes[0]?.date ? new Date(routes[0].date).toLocaleDateString("en-IN", {
     day: "numeric",
     month: "short",
@@ -1029,13 +1061,32 @@ function renderRunMap(activities) {
 
   mapElement.innerHTML = `
     <svg class="route-map-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="Blue route map of the last 30 Strava runs" preserveAspectRatio="xMidYMid meet">
-      ${routes.slice().reverse().map((activity, reverseIndex) => {
-        const index = routes.length - 1 - reverseIndex;
-        const path = createRoutePath(activity.points, bounds, width, height, padding);
-        const opacity = index < 5 ? 0.98 : 0.38;
-        const strokeWidth = index < 5 ? 3.6 : 2.2;
+      ${routes.map((activity, index) => {
+        const column = index % columns;
+        const row = Math.floor(index / columns);
+        const bounds = getPointBounds(activity.points);
+        const boxPadding = 22;
+        const routeBox = {
+          x: column * cellWidth + boxPadding,
+          y: row * cellHeight + boxPadding + 14,
+          width: cellWidth - boxPadding * 2,
+          height: cellHeight - boxPadding * 2 - 14
+        };
+        const path = createRoutePath(activity.points, bounds, routeBox);
+        const opacity = index < 5 ? 0.98 : 0.58;
+        const strokeWidth = index < 5 ? 3.4 : 2.1;
+        const cellX = column * cellWidth;
+        const cellY = row * cellHeight;
+        const labelDate = activity.date ? new Date(activity.date).toLocaleDateString("en-IN", {
+          day: "numeric",
+          month: "short"
+        }) : activity.day;
 
-        return `<path d="${path}" stroke-width="${strokeWidth}" opacity="${opacity}"><title>${escapeHtml(activity.title)} - ${escapeHtml(activity.distance)} at ${escapeHtml(activity.pace)}</title></path>`;
+        return `
+          <rect class="route-cell" x="${cellX.toFixed(1)}" y="${cellY.toFixed(1)}" width="${cellWidth.toFixed(1)}" height="${cellHeight.toFixed(1)}"></rect>
+          <text x="${(cellX + 16).toFixed(1)}" y="${(cellY + 24).toFixed(1)}">${escapeHtml(labelDate)}</text>
+          <path d="${path}" stroke-width="${strokeWidth}" opacity="${opacity}"><title>${escapeHtml(activity.title)} - ${escapeHtml(activity.distance)} at ${escapeHtml(activity.pace)}</title></path>
+        `;
       }).join("")}
     </svg>
   `;
