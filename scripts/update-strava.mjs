@@ -8,6 +8,7 @@ const {
 
 const activitiesOutputPath = new URL("../data/strava-activities.json", import.meta.url);
 const summaryOutputPath = new URL("../data/strava-summary.json", import.meta.url);
+const RUN_LIMIT = 30;
 
 function requireEnv(name, value) {
   if (!value) {
@@ -185,15 +186,21 @@ async function main() {
 
   const recentRuns = activities
     .filter(activity => activity.type === "Run")
-    .slice(0, 5)
+    .slice(0, RUN_LIMIT)
     .map(activity => ({
+      id: activity.id,
       day: formatDay(activity.start_date_local),
       title: activity.name,
       distance: formatDistance(activity.distance),
+      distanceMeters: Math.round(activity.distance),
       pace: formatPace(activity.distance, activity.moving_time),
       effort: estimateEffort(activity),
       type: activity.type,
       date: activity.start_date_local,
+      map: {
+        summaryPolyline: activity.map?.summary_polyline || "",
+        resourceState: activity.map?.resource_state || 0
+      },
       url: `https://www.strava.com/activities/${activity.id}`
     }));
 
@@ -202,7 +209,7 @@ async function main() {
   await mkdir(new URL("../data", import.meta.url), { recursive: true });
   await writeFile(activitiesOutputPath, `${JSON.stringify(recentRuns, null, 2)}\n`, "utf8");
   await writeFile(summaryOutputPath, `${JSON.stringify(weeklySummary, null, 2)}\n`, "utf8");
-  console.log(`Wrote ${recentRuns.length} Strava activities to data/strava-activities.json`);
+  console.log(`Wrote ${recentRuns.length} Strava runs to data/strava-activities.json`);
   console.log(`Wrote weekly mileage summary to data/strava-summary.json`);
 }
 

@@ -1,6 +1,6 @@
 # Strava Data Setup
 
-The website reads recent workouts from `data/strava-activities.json`.
+The website reads recent workouts from `data/strava-activities.json`. The sync stores the latest 30 runs and their Strava summary polylines so the homepage can draw the blue route map.
 
 For real data on GitHub Pages, the private Strava API call runs in GitHub Actions and commits a refreshed JSON file. Add these repository secrets:
 
@@ -8,7 +8,7 @@ For real data on GitHub Pages, the private Strava API call runs in GitHub Action
 - `STRAVA_CLIENT_SECRET`
 - `STRAVA_REFRESH_TOKEN`
 
-Then run the **Update Strava activities** workflow manually once from GitHub Actions. After that it runs every 6 hours.
+Then run the **Update Strava activities** workflow manually once from GitHub Actions. After that it runs every 6 hours. The route map will stay in a sync-pending state until this workflow refreshes the JSON with route data.
 
 ## Fix `activity:read_permission` errors
 
