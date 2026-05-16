@@ -17,8 +17,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="preload" as="image" href="your-image-1.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQKBRXUXVOM0vF6z5jK6C+v5H5TaB6Q=" crossorigin="">
 
 <style>
 :root {
@@ -310,9 +311,20 @@ h1 {
 }
 
 .run-map {
+  display: grid;
+  place-items: center;
   min-height: 620px;
   width: 100%;
   background: #07111a;
+  color: var(--muted);
+  padding: 22px;
+  text-align: center;
+}
+
+.run-map.is-loaded {
+  display: block;
+  padding: 0;
+  text-align: left;
 }
 
 .run-map .leaflet-tile-pane {
@@ -767,7 +779,6 @@ footer {
   <p>&copy; 2026 Abhay Pore. Built for the miles ahead.</p>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 const baseStats = [
   { label: "This week", value: "Loading..." },
@@ -843,6 +854,10 @@ const fallbackWorkouts = [
 ];
 
 let runMapInstance;
+let cachedStravaWorkouts = [];
+let leafletLoadPromise;
+let shouldRenderRunMap = false;
+let hasRenderedRunMap = false;
 
 function renderStats(stats) {
   document.getElementById("stats").innerHTML = stats.map(item => `
@@ -927,11 +942,38 @@ function parseDistanceMeters(activity) {
 function renderMapStatus(message) {
   const mapElement = document.getElementById("runMap");
   mapElement.classList.add("map-status");
+  mapElement.classList.remove("is-loaded");
   mapElement.innerHTML = message;
   document.getElementById("mapSummary").innerHTML = `<span>${message}</span>`;
 }
 
-function renderRunMap(activities) {
+function loadLeafletAssets() {
+  if (window.L) return Promise.resolve();
+  if (leafletLoadPromise) return leafletLoadPromise;
+
+  leafletLoadPromise = new Promise((resolve, reject) => {
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+    stylesheet.integrity = "sha256-p4NxAoJBhIINfQKBRXUXVOM0vF6z5jK6C+v5H5TaB6Q=";
+    stylesheet.crossOrigin = "";
+    document.head.appendChild(stylesheet);
+
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    script.integrity = "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=";
+    script.crossOrigin = "";
+    script.onload = resolve;
+    script.onerror = () => reject(new Error("Could not load Leaflet map assets"));
+    document.body.appendChild(script);
+  });
+
+  return leafletLoadPromise;
+}
+
+async function renderRunMap(activities) {
+  if (hasRenderedRunMap) return;
+
   const routes = activities
     .map(activity => ({
       ...activity,
@@ -944,8 +986,12 @@ function renderRunMap(activities) {
     return;
   }
 
+  hasRenderedRunMap = true;
+  await loadLeafletAssets();
+
   const mapElement = document.getElementById("runMap");
   mapElement.classList.remove("map-status");
+  mapElement.classList.add("is-loaded");
   mapElement.innerHTML = "";
 
   if (runMapInstance) {
@@ -1037,13 +1083,13 @@ function renderGallery(activeIndex = 0) {
 
   gallery.innerHTML = `
     <figure class="gallery-stage">
-      <img src="${activePhoto.src}" alt="${activePhoto.caption}" style="--focus: ${activePhoto.focus || "center"}">
+      <img src="${activePhoto.src}" alt="${activePhoto.caption}" loading="lazy" decoding="async" style="--focus: ${activePhoto.focus || "center"}">
       <figcaption>${activePhoto.caption}</figcaption>
     </figure>
     <div class="gallery-strip" aria-label="Photo choices">
       ${photos.map((photo, index) => `
         <button class="gallery-thumb ${index === activeIndex ? "is-active" : ""}" type="button" data-photo="${index}">
-          <img src="${photo.src}" alt="" loading="lazy" style="--focus: ${photo.focus || "center"}">
+          <img src="${photo.src}" alt="" loading="lazy" decoding="async" style="--focus: ${photo.focus || "center"}">
           <span>${photo.caption}</span>
         </button>
       `).join("")}
@@ -1081,6 +1127,17 @@ function renderWorkouts(workouts) {
   `).join("");
 }
 
+function maybeRenderRunMap() {
+  if (!shouldRenderRunMap || !cachedStravaWorkouts.length || hasRenderedRunMap) return;
+
+  renderMapStatus("Loading Strava route map...");
+  renderRunMap(cachedStravaWorkouts.slice(0, 30)).catch(error => {
+    hasRenderedRunMap = false;
+    console.warn(error);
+    renderMapStatus("The route map could not load. Recent runs are still listed below.");
+  });
+}
+
 async function loadStravaWorkouts() {
   renderWorkoutStatus("Loading latest Strava runs...");
   renderMapStatus("Loading Strava route map...");
@@ -1100,8 +1157,10 @@ async function loadStravaWorkouts() {
       return;
     }
 
-    renderRunMap(workouts.slice(0, 30));
+    cachedStravaWorkouts = workouts;
+    renderMapStatus("Route map is ready and will load as you scroll.");
     renderWorkouts(workouts.slice(0, 5));
+    maybeRenderRunMap();
   } catch (error) {
     console.warn(error);
     renderMapStatus("Run the Strava workflow to load the route map.");
@@ -1109,10 +1168,35 @@ async function loadStravaWorkouts() {
   }
 }
 
+function setupLazyRunMap() {
+  const stravaSection = document.getElementById("strava");
+
+  if (!("IntersectionObserver" in window)) {
+    window.addEventListener("load", () => {
+      shouldRenderRunMap = true;
+      maybeRenderRunMap();
+    }, { once: true });
+    return;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+
+    observer.disconnect();
+    shouldRenderRunMap = true;
+    maybeRenderRunMap();
+  }, {
+    rootMargin: "650px 0px"
+  });
+
+  observer.observe(stravaSection);
+}
+
 loadStravaSummary();
 renderBlogPosts();
 renderGallery();
 loadStravaWorkouts();
+setupLazyRunMap();
 </script>
 </body>
 </html>
