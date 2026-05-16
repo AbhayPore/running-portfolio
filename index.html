@@ -313,7 +313,7 @@ h1 {
 .run-map {
   display: grid;
   place-items: center;
-  min-height: 620px;
+  height: 420px;
   width: 100%;
   background: #07111a;
   color: var(--muted);
@@ -364,11 +364,29 @@ h1 {
 
 .map-status {
   display: grid;
-  min-height: 620px;
+  height: 420px;
   place-items: center;
   padding: 22px;
   color: var(--muted);
   text-align: center;
+}
+
+.map-load {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.map-load button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--orange);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  padding: 10px 16px;
 }
 
 .post button {
@@ -624,7 +642,7 @@ footer {
 
   .run-map,
   .map-status {
-    min-height: 460px;
+    height: 340px;
   }
 
   .gallery-strip {
@@ -962,6 +980,23 @@ function renderMapStatus(message) {
   document.getElementById("mapSummary").innerHTML = `<span>${message}</span>`;
 }
 
+function renderMapLoadButton() {
+  const mapElement = document.getElementById("runMap");
+  mapElement.classList.add("map-status");
+  mapElement.classList.remove("is-loaded");
+  mapElement.innerHTML = `
+    <div class="map-load">
+      <div>Strava route data is ready.</div>
+      <button type="button" id="loadRunMap">Load map</button>
+    </div>
+  `;
+  document.getElementById("mapSummary").innerHTML = `<span>Map tiles will load only after you click Load map.</span>`;
+  document.getElementById("loadRunMap").addEventListener("click", () => {
+    shouldRenderRunMap = true;
+    maybeRenderRunMap();
+  });
+}
+
 function loadLeafletAssets() {
   if (window.L) return Promise.resolve();
   if (leafletLoadPromise) return leafletLoadPromise;
@@ -1010,13 +1045,14 @@ async function renderRunMap(activities) {
   mapElement.innerHTML = "";
 
   const map = L.map(mapElement, {
+    preferCanvas: true,
     scrollWheelZoom: false,
     zoomControl: true
   });
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     maxZoom: 19,
-    attribution: "&copy; OpenStreetMap"
+    attribution: "&copy; OpenStreetMap &copy; CARTO"
   }).addTo(map);
 
   const bounds = [];
@@ -1142,13 +1178,11 @@ function maybeRenderRunMap() {
   if (!shouldRenderRunMap || !cachedStravaWorkouts.length || hasRenderedRunMap) return;
 
   renderMapStatus("Loading Strava route map...");
-  try {
-    renderRunMap(cachedStravaWorkouts.slice(0, 15));
-  } catch (error) {
+  renderRunMap(cachedStravaWorkouts.slice(0, 15)).catch(error => {
     hasRenderedRunMap = false;
     console.warn(error);
     renderMapStatus("The route map could not load. Recent runs are still listed below.");
-  }
+  });
 }
 
 async function loadStravaWorkouts() {
@@ -1171,9 +1205,8 @@ async function loadStravaWorkouts() {
     }
 
     cachedStravaWorkouts = workouts;
-    renderMapStatus("Route map is ready and will load as you scroll.");
+    renderMapLoadButton();
     renderWorkouts(workouts.slice(0, 5));
-    maybeRenderRunMap();
   } catch (error) {
     console.warn(error);
     renderMapStatus("Run the Strava workflow to load the route map.");
@@ -1181,35 +1214,10 @@ async function loadStravaWorkouts() {
   }
 }
 
-function setupLazyRunMap() {
-  const stravaSection = document.getElementById("strava");
-
-  if (!("IntersectionObserver" in window)) {
-    window.addEventListener("load", () => {
-      shouldRenderRunMap = true;
-      maybeRenderRunMap();
-    }, { once: true });
-    return;
-  }
-
-  const observer = new IntersectionObserver(entries => {
-    if (!entries.some(entry => entry.isIntersecting)) return;
-
-    observer.disconnect();
-    shouldRenderRunMap = true;
-    maybeRenderRunMap();
-  }, {
-    rootMargin: "650px 0px"
-  });
-
-  observer.observe(stravaSection);
-}
-
 loadStravaSummary();
 renderBlogPosts();
 renderGallery();
 loadStravaWorkouts();
-setupLazyRunMap();
 </script>
 </body>
 </html>
