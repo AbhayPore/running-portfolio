@@ -1,7 +1,23 @@
 [
   {
+    "id": 18589688384,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "distanceMeters": 5036,
+    "pace": "6:26/km",
+    "effort": 26,
+    "type": "Run",
+    "date": "2026-05-21T05:55:13Z",
+    "map": {
+      "summaryPolyline": "mibpBswibMnDb@tAXl@PV@TCNELKNEF@@DCFIBk@La@Cs@IcB_@eAKsB]aAIcBW_AGiAOkAEqASc@GAB@BFBVDt@?l@H~ABvBN|@Nl@DjEp@tB^l@Pj@@NC\\SF?BDEFQFa@HO?aAMYKkC]{AWm@Ii@A}@QcBOw@KmAEq@Ku@Ge@ME@?BPFnADd@HpCDbBJbDj@dAL|E~@d@?p@WB?@DOJQD[FQAqAWqBU{Ce@}@GeAQ{AMe@Im@Eg@?mBUa@MEB?BF@hAHdFJr@Lx@Jx@Rx@HdDh@fAR`@NPBn@?h@UFA@BIJQF]FU?sB_@uDi@_BOcBW_AG}@MyBKu@Ki@OGAC@FDLB\\AhBNrAAh@B",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/18589688384"
+  },
+  {
     "id": 18550327387,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "2.1 km",
     "distanceMeters": 2090,
@@ -17,7 +33,7 @@
   },
   {
     "id": 18536548094,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "16.0 km",
     "distanceMeters": 16008,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/18233592518"
-  },
-  {
-    "id": 18205838052,
-    "day": "22 Apr 2026",
-    "title": "Morning Run",
-    "distance": "1.0 km",
-    "distanceMeters": 1008,
-    "pace": "4:45/km",
-    "effort": 48,
-    "type": "Run",
-    "date": "2026-04-22T05:55:26Z",
-    "map": {
-      "summaryPolyline": "}{_pBynibMc@lBg@jB]vB_@`BSr@_A|Bi@pBUbAEHXy@R}@l@sBVkA|BgI",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/18205838052"
   }
 ]
