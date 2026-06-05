@@ -1,7 +1,23 @@
 [
   {
+    "id": 18791007938,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "distanceMeters": 5009,
+    "pace": "5:03/km",
+    "effort": 54,
+    "type": "Run",
+    "date": "2026-06-05T05:29:29Z",
+    "map": {
+      "summaryPolyline": "_ibpBowibMvC`@fBZf@PT?TA\\GVKGFUDi@FS?wCe@uAOaBW{@I{@OiBW{BUcAAUEK@WEYBBDXBZ?LC~@FvBCV@vDj@bB\\jC\\nAR`@NTDV?VCd@U@@EFYFo@DUAiHeA{AO{Es@iBK{@Iu@@DB|AD~@HrAEl@BtB^lALdATtEp@bAXV?XCd@U@@IFQF}@DqDk@sFq@_AQ_D_@sAGo@IUIa@EE@@DTF`AFp@Fd@@|@CzDb@b@LzCf@~ARdAP`@NVDb@An@SABQFi@DW@UCqHgAmAMyFw@{BMu@UCB@FHBrAFp@L`AC~@F",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/18791007938"
+  },
+  {
     "id": 18764200872,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "10.0 km",
     "distanceMeters": 10007,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/18286274524"
-  },
-  {
-    "id": 18259708047,
-    "day": "26 Apr 2026",
-    "title": "TCS WORLD 10K BENGALURU",
-    "distance": "10.1 km",
-    "distanceMeters": 10091,
-    "pace": "4:27/km",
-    "effort": 75,
-    "type": "Run",
-    "date": "2026-04-26T06:10:01Z",
-    "map": {
-      "summaryPolyline": "wnenAkiuxMxC}MlAqED]?OEKGKqCq@IIAM@M\\qAPgAr@cCNw@j@iDfAuDz@uDTuBA[GIMIm@MuD_@k@?wEJoA?_AGcAY}@_@SOMWKi@Yy@IOQSc@Ui@UaDcAmBs@a@Y{AwAWMO?c@ByC^wDn@eAJ_CBwKKoA?s@BWHW^CLAXPnBR~DLt@R`@TNj@VzDpB|@h@nCbCdC~BlA~@bAvA`CvEd@x@HFJBfAGhA@tAAd@DXFHHNVB\\HfB@LHNNJVJrAZdAX\\NDFARM~@m@hC{@xCKl@c@nAYfAa@tBMt@CZBVDJRJl@Lv@Tr@NrJ`CjCt@LJDHAZm@nCWxA]rAUnAWz@uAjGQr@iAlF}@vDY|@Mv@St@qAhG[jBa@zAO`A[bAg@lAMd@w@bEUl@}@rD_@pBK\\WtADZNZzBjCtBjBp@r@pL`LTRJDFA@IMWuCkCuEoEeCyB_C_CgB}Ak@q@EKAMD[d@yADi@XaA\\eBV}@Re@^_@l@c@h@YpB_Av@c@~Bo@|EmBbDcA^QPQ?ECA[D_EbB_@RqAf@aBb@}Aj@}Br@w@\\WFM?KEIKCODa@Z_BXiAZiBr@aDn@cCjAgF\\iBx@qDb@aBXsA",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/18259708047"
   }
 ]
