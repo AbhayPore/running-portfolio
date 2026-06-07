@@ -1,7 +1,23 @@
 [
   {
+    "id": 18817671580,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "12.1 km",
+    "distanceMeters": 12075,
+    "pace": "6:02/km",
+    "effort": 55,
+    "type": "Run",
+    "date": "2026-06-07T06:24:02Z",
+    "map": {
+      "summaryPolyline": "}hbpBmwibMbCVtCp@\\FZCh@WF?D@ADGDc@Fk@@m@Aq@OaEk@{AMwAScDYsAA}AM[ICI`@LpANHAXMLA`@Fh@P|BXt@NH?`@Ix@DfEl@~Bh@\\AbAYHKPi@`@{@\\}@f@_ANe@l@yCv@eFf@iCNi@?KKXKl@?v@QhA[dC@PNJfAPpAXnANtAHREDGDMHo@DEPEnARl@NnANbAFb@Ab@ELGFSBaADSDGPKPCnAR`AJbAZfBVFDDF@HK|@@FhCN`A?|@Et@Op@s@PGHANDr@f@h@Vn@N|@Xj@Bb@P~@N|Af@v@^l@J`@Vp@Zx@d@x@j@LLVb@|AbB|@rAf@jAPx@Ff@XhAJ|ADjAEvBKfA[`Bs@rBeAjBm@t@YVQT{@j@y@b@}A~@q@RsAf@cAP_AFIBSPMPCX?dAC~ABnBAnABh@A~@BFJJpATHFBLObBMv@GpABd@Lb@Fj@CnA\\vEGNe@l@Q?[M]E[AMDAnAAHCBI?ECGMOy@GQMKa@QMOCGAQBaAGw@?}@Le@@_@COOa@ASLoBAgAD}BBSDGNGRA`ABFCBE@aDDa@@_AAaA@QBADL@v@HdAAjADv@Av@DNJHh@Fb@DlA?bARvA@|AJrA?`CCtBIf@IlBe@t@EzAUz@Ez@Bj@?~BNrBVrAB^BHAHEDGLq@d@w@Je@ASG]D_CCQKg@Gs@Ks@CgB@g@D{@Ny@QgBGEa@@YEi@@g@?uBKo@De@?o@Eq@ASGEGMm@S_BQ{@Is@CcBHo@FiCA_ABq@EOGCwAOyAMcCCa@QKW@JFN@@cA_Do@yAo@aAyAwAo@u@oBgA{@_@_AQe@U]Ku@O}Ac@e@Es@Cu@Sq@Y{AeAGCG@EDOXQRYTOHcBH_CGo@GOICG?GLq@AKEEGEiBUq@Wc@IoAA{@CG@INEjAGPGFMDw@FeBGcDm@a@EGBEFGn@GNSHg@?g@EyAYq@Iy@Sw@WSAGBEFEv@]`Ca@vAk@hAk@`A_@^O\\OLm@NWBS?}A]{BWw@OeCYaCa@eDUuAEa@E]KLHVFt@@xARj@Bj@Lf@?z@J",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/18817671580"
+  },
+  {
     "id": 18791007938,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5009,
@@ -17,7 +33,7 @@
   },
   {
     "id": 18764200872,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "10.0 km",
     "distanceMeters": 10007,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/18326873911"
-  },
-  {
-    "id": 18286274524,
-    "day": "28 Apr 2026",
-    "title": "Morning Run",
-    "distance": "6.5 km",
-    "distanceMeters": 6510,
-    "pace": "5:24/km",
-    "effort": 51,
-    "type": "Run",
-    "date": "2026-04-28T06:14:49Z",
-    "map": {
-      "summaryPolyline": "iibpBwwibMv@J|Dj@r@RXBX?j@QJ?F@BRGd@[z@Sv@Uf@c@lAYb@GBU?uC[sBOuB]sBSi@MkAGw@IkDQoCSUGQMk@o@i@_@iAg@_AUUKGGGUc@_EQk@]oBa@aBm@yBSaA_@uAiDmKm@yBaA}E]mAU]c@g@gF{Eu@_AcC}Bk@a@s@a@s@k@o@a@[a@aAaBDBb@v@f@p@~ArA`Af@p@f@lBfB~@`A|@v@tCvCjArAh@rA\\lAjAnF^xAn@~Al@hBpAxEVt@\\xA^hAhAlF`@pCJ^DHNJj@Np@\\|@ZNLBH?FGBICy@[_AWu@UQMUg@GCIASDmAb@eAZi@Le@Ng@NI?BEHEpC}@fAYh@STEJ@FDT^PLnCfAf@Z~@t@RH~C\\tAFvANzCRx@PbALr@DhAPxAHlBT^@^DJ@HCJOTs@VcAVe@Nk@Zs@FW?IECI@k@PY@{AYmEq@",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/18286274524"
   }
 ]
