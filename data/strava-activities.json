@@ -1,7 +1,23 @@
 [
   {
+    "id": 19056772738,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "4.0 km",
+    "distanceMeters": 4010,
+    "pace": "5:02/km",
+    "effort": 51,
+    "type": "Run",
+    "date": "2026-06-25T07:20:38Z",
+    "map": {
+      "summaryPolyline": "ic_pBibibM?j@En@UvAW`AS`@k@vAWb@c@h@o@bAwBrBcCpAa@JiAJmC^IBa@b@CRFl@?LMf@Ar@Lp@Dj@Bl@?dAFj@Gv@EDEACGES?m@ImB@cACiABoCAKEG]WS]IGUIs@MkA]w@YaA[EE@EP@hATzCx@J?HA^SPQBI@QKgBYiBBGBAP^Np@T`D^h@TPV@~AI`AY\\Ql@UdC}AdAw@dAoAp@aAn@}Ah@wBDYP_DCk@Q}BKq@i@iCQq@[w@Ym@c@s@mAaA]Si@_@g@SuAu@a@OsA]m@WiCw@IGCGBCV@hATv@FtAj@nAb@l@\\^HTJx@p@pAnA~AzBf@dA",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19056772738"
+  },
+  {
     "id": 18987426065,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "0.9 km",
     "distanceMeters": 917,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/18471376209"
-  },
-  {
-    "id": 18446515922,
-    "day": "10 May 2026",
-    "title": "Morning Run",
-    "distance": "15.0 km",
-    "distanceMeters": 15007,
-    "pace": "5:56/km",
-    "effort": 66,
-    "type": "Run",
-    "date": "2026-05-10T07:14:19Z",
-    "map": {
-      "summaryPolyline": "gibpBuwibM|Cb@fAZlARd@?t@]EJQF{@Lk@GMIn@LT@TEhA_@nAcDj@_AV_Aj@aDLWLKf@DxDz@vBPPALIDu@HOFCR@zAZvBXp@Bl@A`@GHKHkBFMLEp@HlAXt@Fr@TvB\\FDFPGt@HJNBzBJfBE|@Wh@y@NKF@pAv@jBt@jALfB`@vDnAj@Xd@NnBhAhA`AhA`BZj@|@lAf@bBZdBRlD@jAGxAIr@Qn@s@tBuAlCmAbB}AnA_CfAw@Xe@HcAXo@Zi@@SDWZGLIjCDnBGz@HvCDJHFdALJHDPU~AGjDDv@Vj@?FCXExGOLQDu@Ee@@CBETGfAE@GCIQSkAIGc@QKOCK?wAD_ACiA@m@ASOa@E[N_E?sBDQNG|ABLIAgFBk@@sDC_@IM_@OQc@KMeCg@s@Yy@UOK?GDCN?h@TQCb@FhA^~A^P?n@e@FOK_CGi@Ou@?QD?HL^lANrAD`ARt@BXCd@Ub@En@CfBBx@?^Fj@E`@A^?`@Ht@If@KJEACIA{ACy@Ho@@oBGkDCIc@YO[MMeEcAu@YGE?GDAP@bEhAl@HNEd@_@FWCy@WuC?SD?Vj@Hb@VfDb@r@LJ\\A~Ba@vAg@lAm@XS^g@d@Yl@i@j@s@?OKK{@[s@EoAO_@?KJM\\g@l@oA|@y@V{BNOFAFRnBf@x@PF`C_@bA_@h@MbAi@fAw@\\[^e@h@a@t@w@dAiBt@{BXuBBa@@{BM{BIm@Mk@iAmDk@cAi@w@}@y@uA{@eA_AqA_@c@WsCeA_AU_@YT?l@VtARtBh@zCxAlBzA^b@j@|@b@d@t@nAoBoC}A_Bg@a@y@KyA{@_Cm@a@SaA]gDu@w@WeAk@w@m@QAe@v@UP]JuAFyCIUEQKCQJq@AIMIyAQaAY_@GmBAo@EILCrAELMHwAHcAEoEy@MHM`AMLI@wAKsDq@iAYOAGLEv@YpBa@|Aa@z@]d@Wf@c@`@Qf@OLSDu@JSA{IyAeAGkAAgC_@NAjCJz@Lr@PvCVrDn@l@DTAr@MNI~AyDBI?GQEeAIgFy@eBW}@Go@MpDd@l@?rAJjFr@LITy@n@mDBYEK}Cm@mDk@}C_A_Cg@{Ag@a@GjAPhFhAxDdAnAR~BRf@TFTEv@o@jDYbAq@hA",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/18446515922"
   }
 ]
