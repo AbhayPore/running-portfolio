@@ -1,7 +1,23 @@
 [
   {
-    "id": 19056772738,
+    "id": 19069019545,
     "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "distanceMeters": 5031,
+    "pace": "6:22/km",
+    "effort": 28,
+    "type": "Run",
+    "date": "2026-06-26T07:08:11Z",
+    "map": {
+      "summaryPolyline": "eibpBswibMdAT~@Fn@HbB^b@F\\A^YFADB?DOJc@La@@g@Gq@OqBWs@QaCWkB]_@Cm@AsAQe@Ce@Io@E{@QFHRF~AL|@DbBNlAFl@Hj@D`BV`AP|@JvAR|A\\T?NIROFA?BKHYHOBOA{B]_BQkASkCYoAY{@Ce@Ec@G{@Cw@Gi@MUGUEE@LHVF|BH|@PtCJ`@F`@BxB`@bCXxATn@RZDR?NIRODA@@KHc@NK?a@Ce@I_ASgBQo@Mw@Im@Mw@Eo@MwAOwASc@B]CkAOQEYMG?A@HJPDn@B`@Hf@@j@Fb@Ez@LjADd@Jb@@^HxHhAl@PXDP@HA^WH@GFc@NY?kAOmB[}@KiBYyAMkAScBOc@IyAA_B[K?FHZFf@AfA@|Bb@",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19069019545"
+  },
+  {
+    "id": 19056772738,
+    "day": "Yesterday",
     "title": "Morning Run",
     "distance": "4.0 km",
     "distanceMeters": 4010,
@@ -17,7 +33,7 @@
   },
   {
     "id": 18987426065,
-    "day": "6 days ago",
+    "day": "19 Jun 2026",
     "title": "Morning Run",
     "distance": "0.9 km",
     "distanceMeters": 917,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/18485384434"
-  },
-  {
-    "id": 18471376209,
-    "day": "12 May 2026",
-    "title": "Morning Run",
-    "distance": "10.0 km",
-    "distanceMeters": 10009,
-    "pace": "5:10/km",
-    "effort": 67,
-    "type": "Run",
-    "date": "2026-05-12T05:57:57Z",
-    "map": {
-      "summaryPolyline": "{hbpBuwibMfFx@n@TRD`@El@SH?DDBHAZGb@Sd@s@pBm@zAMNSB}AW_BMqAQwAIw@Mg@Au@EeBYm@GeB[_AGo@CgAOcAESIq@m@s@e@}@_@qAa@QOUc@QC_@DiBp@kBh@yBh@eCx@{AV}@Zs@ZcA^i@VqAPcBl@uAZe@Pu@LoAd@k@F_@@MCIHUFqDl@kB`@aC^k@LMKSa@QQkAeAuAgAu@{@gBcBi@]cA]aB}@IUEsAEa@KUQOa@IqBQ{@Ge@A{CWiDUuAE_A@uDKkA?cABc@DsBd@uCd@_Cb@g@LaBp@YBo@?c@BcAXaD^o@JeGrBcBr@cFzA_A`@sAT}EvAyA`@iBl@k@ZGA@EBKb@m@\\YTMtCy@lA[j@SvDkA`B]vCy@pCcArCoAzAe@z@Q`HcApIaBvAQpA[zAYl@SJAJ@p@LVBvBAhBD`C@`BNrC?x@Lb@?x@Tn@Hh@JbBH\\JNJHTFjAFnBBNDHNL\\NlA`@n@b@RPbClCpA|@tBtBTLf@OnJaBfAYt@K|Bu@l@Cj@I`F{AbAQhAe@j@Of@Wn@UpCo@fBk@tAa@rAg@dCu@VEV@HDPb@RPnCdAhAv@XZTJz@JhAFfDRh@JpD\\l@NzAHpBZjBP|@Lz@DTCLSb@cA`@{Aj@yAHa@AIECK?YFUJU@yBe@q@Iq@GyAUq@G",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/18471376209"
   }
 ]
