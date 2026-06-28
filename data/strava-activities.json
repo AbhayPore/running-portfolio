@@ -1,7 +1,23 @@
 [
   {
+    "id": 19092463034,
+    "day": "Today",
+    "title": "3 hours Stadium Run. Secured 2nd place",
+    "distance": "31.6 km",
+    "distanceMeters": 31614,
+    "pace": "5:33/km",
+    "effort": 74,
+    "type": "Run",
+    "date": "2026-06-28T03:59:46Z",
+    "map": {
+      "summaryPolyline": "wo}oB}t_bMUwE`AcApAv@RdE_AbAuAq@QqE~@}@tAv@LpEoAv@gAgAGmEnB_@j@fGsCWKaEjAy@fAr@PnEsCFOwEjAs@xAxFeAfAoAs@OwEdAu@hAp@RlEsCNSkE|@aArAl@VlEkAbAiAs@QqEjA{@jA`AJhEsCAMuEjAs@xAzFgAfAoAy@MsEpAu@nAfGsCBMuEfAu@hAt@PfEsCPOwEdAw@lAx@NhEuCFQgEbAcApAr@NrEqCHQoEjAaAfAv@PjEsCHOsEbAy@jAp@\\dEgAhAwAw@OqEhAw@hAv@PhEsCJQoEbA}@nAr@PjEiA`AkAu@OoEfA{@jAt@PnEqCJUmEjAcAfAp@RpEsCFQoEbA{@nAv@PdEeAbAoAw@MqEjAw@xAzFeAdAoAs@QoEbA}@nAt@RdEsCTSqEbA_ApAx@NbEsCNQkEjAaAfAt@NnEsC@OkEnAy@rAnGsCGtAr@|@aAWkEiAi@_A|@PjElCMQmEgAo@eAdAPdEpCUSeEsAm@{@`APfEnCSSkEkAk@aAfAPbEnCOQgEoAs@_A|@NjErAp@~@iAWgEmAg@}@~@RnElCWQiEqAm@}@|@PhEnCQQgEqAm@}@|@RpElCUSkEmAo@_A~@PhEnCMSkEiAo@aAz@LjEhAt@fAgAUkEmAg@}@z@RpElCYSgEgAm@eAbANbEpCMSgEoAo@}@z@PjEtCOWeEkAs@cA~@PjEnCSUmEiAi@aA|@PnEnCUSiEkAm@aA`APjEnCWSeEgAo@eA|@PlEnCOQiEoAq@_AbAPhEnCYQcEqAm@}@|@PlEnCSUoEgAi@cAdAPbElAp@`AeASgEgAm@eAbANbEpCOUoEsAe@e@hGvCS_@qEoAc@y@~@RnElC[SgEmAk@_A`APfEnCSSkEoAi@}@|@RpElC[UiEqAi@y@`ARnEfB\\l@sBmB{D{@`ARlElCWQgEmAq@aAbANbEnCIQoEkAm@aA~@NhEpCOwAyFiA|@NhEnCGQoEcAo@iA~@PhElCImA_GoAv@NrEvCW]kEiAg@aAbAPhEnCWSeEkAo@_Az@NnElCQOeEiAs@eA`ANfEnCMOiEeAq@iA`ANbEnCGOkEiAq@eA~@NdEnCIOiEmAq@_A|@NlElCMOiEgAs@gA`ANfEnCIQsEcAk@iA`AL~DnC?mAaGmAx@LlEnCKsA{FiAz@LfElC@oAeGmA~@NbElCAmAaGmAz@LhEnCGqA}FkAz@LhElCAiAaGqAz@LhElCEqA_GiAv@BzDK_EpAw@dAt@JpEqCK",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19092463034"
+  },
+  {
     "id": 19069019545,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5031,
@@ -17,7 +33,7 @@
   },
   {
     "id": 19056772738,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "4.0 km",
     "distanceMeters": 4010,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/18536548094"
-  },
-  {
-    "id": 18485384434,
-    "day": "13 May 2026",
-    "title": "Morning Run",
-    "distance": "9.1 km",
-    "distanceMeters": 9119,
-    "pace": "6:02/km",
-    "effort": 47,
-    "type": "Run",
-    "date": "2026-05-13T06:00:11Z",
-    "map": {
-      "summaryPolyline": "_ibpBqwibMpFr@f@PTDR@PCXQPEF@?FKLSFSBWA{AQuA[oAQ]Kw@CwAOcCa@i@Eg@I}@AcCc@G@ABJFTBhDJfAVrARd@Df@Al@Lf@BpBRfCh@r@Rb@@r@MP?DB@FIl@Uf@Kb@Ux@aA|BILO@aAUc@Cm@ImBIo@IoAW_AKaACe@@sA]uAIc@IwAGiBQ_A?EBCDPpCGnBHd@`@fBAFWs@OUGYGgAGq@HiBAq@Gc@Ok@OQ_Ao@}@a@w@QSIUUSa@ECOC_@Ju@X_D|@qAd@e@HcBh@mAP_ATgAd@y@d@m@NYLc@FqAXmAn@o@Ts@P}@P}@XgAXmEl@yB`@uDj@e@ICCm@y@{@u@iBwAcCiCSOu@g@y@YQOg@KIGEOUEGEESAo@KcAMYMK[EmD]sJo@oFGsBA_@COGCE?GDERGz@EjG?|CJhCDz@Dd@?RB^RVH~AV`@Fv@BFBXXFPHnAD`B@FHNNHh@Vx@Zn@b@rApArAvAbAn@tApA`@b@^NNNPAnA[nAQrCi@tDo@tAe@~Bi@rBm@p@YjAWjA]b@Qv@U^SfA_@dAQfA_@bEkAjF_BR?FBDFP\\HH|DdBv@r@PHpCZ^HvBFtARt@FbAP~CXrBXv@HlCN`@FTEFGLe@Ra@`AyCZu@@KAGGCy@R_@Bw@Qa@EiDm@s@GiBWqAIgC_@sACqAOe@KDB~@LfAF",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/18485384434"
   }
 ]
