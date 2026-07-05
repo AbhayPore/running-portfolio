@@ -1,7 +1,7 @@
 [
   {
     "id": 19171097454,
-    "day": "Today",
+    "day": "Yesterday",
     "title": "Morning Run",
     "distance": "3.0 km",
     "distanceMeters": 3049,
@@ -17,7 +17,7 @@
   },
   {
     "id": 19117594405,
-    "day": "4 days ago",
+    "day": "5 days ago",
     "title": "Morning Run",
     "distance": "4.0 km",
     "distanceMeters": 4014,
@@ -33,7 +33,7 @@
   },
   {
     "id": 19092463034,
-    "day": "6 days ago",
+    "day": "28 Jun 2026",
     "title": "3 hours Stadium Run. Secured 2nd place",
     "distance": "31.6 km",
     "distanceMeters": 31614,
