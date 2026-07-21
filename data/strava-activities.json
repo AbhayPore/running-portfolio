@@ -1,7 +1,23 @@
 [
   {
+    "id": 19396107528,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "distanceMeters": 5009,
+    "pace": "4:56/km",
+    "effort": 56,
+    "type": "Run",
+    "date": "2026-07-21T05:17:06Z",
+    "map": {
+      "summaryPolyline": "cibpBuwibM\\BxATz@Rr@Jh@Pj@HT?l@_@ELSHUB]?_AUcDc@q@MkAOkBOmAScAMmBIe@I_@Ee@OED?DPJ`AFf@Jr@B`AJr@@jBXdA@pAJlEv@f@NXFb@@JCPOVGMJ[Ha@BWEo@SsEm@}Ei@yBYkAC_BWYIG?E@?FDBND^?|@P`A@n@LXBX?~@Np@Fh@?jBLjBZfATb@Fn@PXFZAf@[HABBOJe@J]?gAW}G_AyBSgC_@WCcA@{AWa@CC@BBPHh@@`ALr@BfAPt@@x@Lr@FjABr@FjAPtCh@~@TV@JAd@[F?IJWHYBU?eAUkEm@yEg@wAW}@Is@@aC]GFHHJBp@?VBLDr@?r@J",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19396107528"
+  },
+  {
     "id": 19370321015,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "4.6 km",
     "distanceMeters": 4632,
@@ -17,7 +33,7 @@
   },
   {
     "id": 19359846071,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "5.2 km",
     "distanceMeters": 5151,
@@ -33,7 +49,7 @@
   },
   {
     "id": 19344568262,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "5.6 km",
     "distanceMeters": 5584,
@@ -49,7 +65,7 @@
   },
   {
     "id": 19316552651,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "0.3 km",
     "distanceMeters": 251,
@@ -65,7 +81,7 @@
   },
   {
     "id": 19316552686,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "7.0 km",
     "distanceMeters": 7011,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/19056772738"
-  },
-  {
-    "id": 18987426065,
-    "day": "19 Jun 2026",
-    "title": "Morning Run",
-    "distance": "0.9 km",
-    "distanceMeters": 917,
-    "pace": "5:58/km",
-    "effort": 24,
-    "type": "Run",
-    "date": "2026-06-19T07:03:39Z",
-    "map": {
-      "summaryPolyline": "_hbpBewibMp@Hb@Bx@RjALz@R`@CLEPQDABBADQHe@LQBgAUcAK{@O",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/18987426065"
   }
 ]
