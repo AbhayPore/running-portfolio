@@ -1,7 +1,23 @@
 [
   {
-    "id": 19396107528,
+    "id": 19411028089,
     "day": "Today",
+    "title": "Morning Run",
+    "distance": "4.0 km",
+    "distanceMeters": 4018,
+    "pace": "5:25/km",
+    "effort": 44,
+    "type": "Run",
+    "date": "2026-07-22T05:24:33Z",
+    "map": {
+      "summaryPolyline": "_ibpBqwibMlFx@`AV`@AXQDABBADGBSBY@[Ak@OsEq@}@EcAM{AWcB_@{@MgACaBSI?CBFHPDf@Dd@Jj@Bn@Ht@Lp@@rANdA@h@FjG~@lAX\\CXQDA@DOJI@U@]A}@Su@I_BYw@Kk@CoAMoDq@wASwC[K@FJRFpCXTF`ALb@BpANh@Al@FfGx@XFj@PZDV@JAb@WCJSHYBUA_C_@k@M}AU_CSwCi@oB[}@EuASSACDBF^J|BTt@Lr@Fh@@n@H|@DhAJ`Fr@lB`@X@d@UD@?DEBUFo@?_AUcBW",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19411028089"
+  },
+  {
+    "id": 19396107528,
+    "day": "Yesterday",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5009,
@@ -17,7 +33,7 @@
   },
   {
     "id": 19370321015,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "4.6 km",
     "distanceMeters": 4632,
@@ -33,7 +49,7 @@
   },
   {
     "id": 19359846071,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "5.2 km",
     "distanceMeters": 5151,
@@ -49,7 +65,7 @@
   },
   {
     "id": 19344568262,
-    "day": "4 days ago",
+    "day": "5 days ago",
     "title": "Morning Run",
     "distance": "5.6 km",
     "distanceMeters": 5584,
@@ -65,7 +81,7 @@
   },
   {
     "id": 19316552651,
-    "day": "6 days ago",
+    "day": "15 Jul 2026",
     "title": "Morning Run",
     "distance": "0.3 km",
     "distanceMeters": 251,
@@ -81,7 +97,7 @@
   },
   {
     "id": 19316552686,
-    "day": "6 days ago",
+    "day": "15 Jul 2026",
     "title": "Morning Run",
     "distance": "7.0 km",
     "distanceMeters": 7011,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/19069019545"
-  },
-  {
-    "id": 19056772738,
-    "day": "25 Jun 2026",
-    "title": "Morning Run",
-    "distance": "4.0 km",
-    "distanceMeters": 4010,
-    "pace": "5:02/km",
-    "effort": 51,
-    "type": "Run",
-    "date": "2026-06-25T07:20:38Z",
-    "map": {
-      "summaryPolyline": "ic_pBibibM?j@En@UvAW`AS`@k@vAWb@c@h@o@bAwBrBcCpAa@JiAJmC^IBa@b@CRFl@?LMf@Ar@Lp@Dj@Bl@?dAFj@Gv@EDEACGES?m@ImB@cACiABoCAKEG]WS]IGUIs@MkA]w@YaA[EE@EP@hATzCx@J?HA^SPQBI@QKgBYiBBGBAP^Np@T`D^h@TPV@~AI`AY\\Ql@UdC}AdAw@dAoAp@aAn@}Ah@wBDYP_DCk@Q}BKq@i@iCQq@[w@Ym@c@s@mAaA]Si@_@g@SuAu@a@OsA]m@WiCw@IGCGBCV@hATv@FtAj@nAb@l@\\^HTJx@p@pAnA~AzBf@dA",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/19056772738"
   }
 ]
