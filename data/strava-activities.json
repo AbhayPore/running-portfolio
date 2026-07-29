@@ -1,5 +1,37 @@
 [
   {
+    "id": 19514842518,
+    "day": "Today",
+    "title": "Evening Run",
+    "distance": "2.0 km",
+    "distanceMeters": 2017,
+    "pace": "6:07/km",
+    "effort": 24,
+    "type": "Run",
+    "date": "2026-07-29T18:26:42Z",
+    "map": {
+      "summaryPolyline": "ev_pBmrhbMkAPgBPGBEDCF?TJvAHNj@p@P@t@KhAUl@GRGb@Wn@e@h@Y`BoAz@{@Vg@`BaCPa@Rs@^cBNwB@a@CcACs@Gg@OmAQ}@q@qBy@kBa@c@}@gAwAeAAG@GBAHAb@TVPb@d@`AvAPZfA|AT`@x@fCVtE?b@Cw@",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19514842518"
+  },
+  {
+    "id": 19514842869,
+    "day": "Today",
+    "title": "Evening Run",
+    "distance": "5.0 km",
+    "distanceMeters": 5014,
+    "pace": "4:57/km",
+    "effort": 56,
+    "type": "Run",
+    "date": "2026-07-29T18:00:07Z",
+    "map": {
+      "summaryPolyline": "}d_pBqkibMLz@DfA?jCIfC_@hBaAzBk@dAs@`Ai@l@}ExCSHg@Fm@L}Ad@YDQE[k@UYAI?o@K}AYkBZnBTfCFN^h@FFTBbAKx@OlCcAj@a@f@c@~@o@jB{Bj@y@h@kA\\cAZgBJiC?}@KaBo@cDi@cBm@qAa@o@OQb@z@z@nAr@xAL`@RdAFbAB~@ArABfAI~AMbAKf@Mb@y@tBOVQTKFM?[Oc@]g@Ks@GaABYDQNS\\WXWd@]\\MFoARk@DuAPIFCH?LPzAp@t@JDJ@zAYdAa@|@QXK`BiAlBiB|AmBl@kA`@cAd@mBFi@B{BGgBk@{DMk@[_AWg@i@aA]a@YWv@z@f@r@R`@x@tBRhATfC@v@",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19514842869"
+  },
+  {
     "id": 19480388788,
     "day": "2 days ago",
     "title": "Morning Run",
@@ -206,37 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/19196571641"
-  },
-  {
-    "id": 19171097454,
-    "day": "4 Jul 2026",
-    "title": "Morning Run",
-    "distance": "3.0 km",
-    "distanceMeters": 3049,
-    "pace": "8:34/km",
-    "effort": 20,
-    "type": "Run",
-    "date": "2026-07-04T08:57:32Z",
-    "map": {
-      "summaryPolyline": "}fbpB_wibMbAL`@L`ANt@TPCd@A\\Gu@LY@w@Ss@?u@Uk@Mo@Iq@M}BMaAWk@C_@IaAE_AAiBYM?NDv@FzCHjBTTH^F^?^HZ?j@F`@FF?RDbANTHj@Jl@Dv@TV?j@K@BEBQDs@@qAQoAY[Cw@OS?m@Ks@IW?gAMq@Qw@WYAOB]AW@]Kk@EY@[CWSbBX|@?VD~@Hf@F\\JrAL\\AVHnAHrB\\t@Nl@H~@Tf@?\\KJDKFUDa@B_@IcAOgAWa@?w@Sq@I",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/19171097454"
-  },
-  {
-    "id": 19117594405,
-    "day": "30 Jun 2026",
-    "title": "Morning Run",
-    "distance": "4.0 km",
-    "distanceMeters": 4014,
-    "pace": "6:39/km",
-    "effort": 20,
-    "type": "Run",
-    "date": "2026-06-30T05:29:34Z",
-    "map": {
-      "summaryPolyline": "iibpBwwibMzCb@bDj@J@d@EL@A@GBm@@W?k@G[Iy@G{Cm@iAOu@MmAIaCW_AA[I_AISEWMA?JJXH`ABz@H\\A^Er@Bj@JfBNp@RrBTrB`@t@Jt@Pl@BRCBINGN@?DYLa@Fa@AkAQu@IqDo@uBYyBQw@KmAG_CYG?EBDHVDh@ClAHrAAz@Fx@J`AHl@PbCVlB^hAPl@Nd@?p@QD?@BKHe@Hi@@mC_@{Dq@kBSYA_CYgBKm@MoAQG?CD?BNHvB^t@IfALx@Nr@F\\IXC\\FrCVtEbAl@BPCb@KF?BDCBIB{@JQ?[G",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/19117594405"
   }
 ]
