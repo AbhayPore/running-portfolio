@@ -1,5 +1,21 @@
 [
   {
+    "id": 19528954538,
+    "day": "Today",
+    "title": "Evening Run",
+    "distance": "7.3 km",
+    "distanceMeters": 7255,
+    "pace": "5:06/km",
+    "effort": 60,
+    "type": "Run",
+    "date": "2026-07-30T18:03:29Z",
+    "map": {
+      "summaryPolyline": "ae_pBalibMJ~@BzBDTCfA?xAk@|C}@fCY\\IDK?mAa@WGmBAi@BOHa@b@e@v@}Az@e@HaBFc@BGDCRPbBJTn@j@H@JA`@KpAMxCmAz@g@^c@zAuAj@k@vA{BhAeDPgAAeDImAa@{CS{@Us@m@uA]k@aAeA?GOOLJDHd@l@`@p@r@|@\\x@Zz@FXZfCFbCCxBI|@Oz@w@`CW~@Wb@IHM@OAmAk@YKqAIk@BWLWb@eAzAUN[L]JkARkA@GDCHAJBJAs@GSFJCELpBHn@b@p@LFN?nAQx@U`Bg@pAi@b@Uv@m@TSt@y@v@sAb@_A~@gC^mBLkA?}@EuAa@kC_AiDYs@We@GWg@i@JTfAvAr@xAZx@X|APvCB|AMxB]dBqA~CW^KJMBMAy@g@_@IqBGg@?QJuAdBa@\\k@RgARiAHODCRHd@AHCEJx@\\XNTFBP@z@Gf@I~Ac@jAe@`BgAt@}@v@s@~@mAVe@v@yB\\oAL}@L_DKsAi@eDk@mBWq@Wg@k@{@]]r@v@h@n@Zj@p@xAFRf@vDFbBAfAElBIf@Sv@a@bA\\sARcAB{AFaAGwAKwAIg@WmA",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19528954538"
+  },
+  {
     "id": 19514842518,
     "day": "Yesterday",
     "title": "Evening Run",
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/19209707374"
-  },
-  {
-    "id": 19196571641,
-    "day": "6 Jul 2026",
-    "title": "Morning Run",
-    "distance": "2.3 km",
-    "distanceMeters": 2297,
-    "pace": "6:12/km",
-    "effort": 23,
-    "type": "Run",
-    "date": "2026-07-06T08:40:46Z",
-    "map": {
-      "summaryPolyline": "uhbpBowibM~Dn@h@Fr@Pb@@d@MDB?@_AFu@GwB]o@GgAUu@Gm@IuAKeCa@q@Gg@@m@MY@[Ce@QPDd@?T@z@RT?XFvBJnEf@zCd@l@Nv@Fd@Pr@@RINIDABBCJKBcABaFs@",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/19196571641"
   }
 ]
