@@ -1,7 +1,7 @@
 [
   {
     "id": 19528954538,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Evening Run",
     "distance": "7.3 km",
     "distanceMeters": 7255,
@@ -17,7 +17,7 @@
   },
   {
     "id": 19514842518,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Evening Run",
     "distance": "2.0 km",
     "distanceMeters": 2017,
@@ -33,7 +33,7 @@
   },
   {
     "id": 19514842869,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Evening Run",
     "distance": "5.0 km",
     "distanceMeters": 5014,
@@ -49,7 +49,7 @@
   },
   {
     "id": 19480388788,
-    "day": "4 days ago",
+    "day": "5 days ago",
     "title": "Morning Run",
     "distance": "10.0 km",
     "distanceMeters": 10013,
