@@ -1,7 +1,23 @@
 [
   {
+    "id": 19590198386,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "9.1 km",
+    "distanceMeters": 9116,
+    "pace": "5:05/km",
+    "effort": 66,
+    "type": "Run",
+    "date": "2026-08-04T04:53:00Z",
+    "map": {
+      "summaryPolyline": "qibpBkwibMl@FfAN`AH|@LnA`@`@@TMNEBHEHKDk@?[Ao@UkDk@_@KiCOmBQcAKa@K{@MuA?c@OUELHhABhAPZJp@FbABlARb@KTLVDdADl@LvAJn@JZFv@XXDL?XELMJDGPcA@_AYeDi@c@KgCOgD[o@C}@?c@CSEkAa@MCFDrATz@Bt@PnCPTBFFr@Ep@Jb@?lATpBP`@F|@ZXDTBd@UHB@JEFS@m@@UEo@SwAY{@Ku@QwE[eAMsAIoAEiAYYENHR@`@Cb@J`@Bv@RV@`ARv@HfAXf@@p@SR?v@LdCVzAb@VDL?h@SDBBHCDUDy@?y@WcASmAQw@QgDSgCU{@C{AOwA[NH|@BVD^BfAVhAHb@HpAFXDt@AdFj@ZFp@Vb@FR?^QF@BFCFQDy@?u@UwAYcAOo@MmE[eBO_ACkDi@FFl@@V@r@H~@RlBJ|@Lh@@b@Jj@?\\@l@J|BTp@Nn@Tb@FJA`@QJB@FEFIBcA?m@SoAWwASm@O}DWqBSq@CO@y@Wg@@o@IKGMCKM\\R`BLrAV~@FxBV\\?j@Jv@ArARxALx@Pn@R`@F^MLCFFAFSF{@A_AWeCc@cASkCQiCUyAG{@UY@KAe@Ig@Of@Nj@Bt@Hp@Nr@HxAHfALjCNl@JtALbANv@Vh@Hl@SD@?DOLg@@[AgA[qEu@m@CgBMoBSyAGe@Mu@IgAWIKbB`@d@HhE\\lARhCRjANlBRtAXJ?TGH??BQ@u@Ao@Qq@K",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19590198386"
+  },
+  {
     "id": 19563568254,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "16.0 km",
     "distanceMeters": 16007,
@@ -17,7 +33,7 @@
   },
   {
     "id": 19528954538,
-    "day": "4 days ago",
+    "day": "5 days ago",
     "title": "Evening Run",
     "distance": "7.3 km",
     "distanceMeters": 7255,
@@ -33,7 +49,7 @@
   },
   {
     "id": 19514842518,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Evening Run",
     "distance": "2.0 km",
     "distanceMeters": 2017,
@@ -49,7 +65,7 @@
   },
   {
     "id": 19514842869,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Evening Run",
     "distance": "5.0 km",
     "distanceMeters": 5014,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/19263272113"
-  },
-  {
-    "id": 19250766971,
-    "day": "10 Jul 2026",
-    "title": "Morning Run",
-    "distance": "5.2 km",
-    "distanceMeters": 5159,
-    "pace": "4:60/km",
-    "effort": 56,
-    "type": "Run",
-    "date": "2026-07-10T07:18:34Z",
-    "map": {
-      "summaryPolyline": "yd_pB_kibMLlAHnA?vAKbBUvAK\\s@hB[l@}@rAUh@m@~@gA|@m@Vq@b@e@RgAVa@DoAf@UBK?IGa@k@GGUIIECKAs@Cq@c@sBAK@GD?XvALfABx@DVd@p@TJ`@A`@ErBc@r@UbAk@t@YrAgAv@}@lAuBVk@`AcDL}@NkCCuA]sBW}@Im@Sy@Qg@i@kAU_@i@k@W[o@s@OUKYOQIEe@KYKi@O}@]i@KM?KDKHMZ[|Ak@dBUfA[~@g@lBQl@WbAWtA[pAIp@Kb@q@vBq@dCeA`D}@fDCXDHRJnElAZDJAf@WHKBK@OCs@BWAYGYJ]EE`@vDd@p@HHLB\\An@GnAU\\MbAYjAu@`@c@vAaAb@k@f@c@b@o@d@aANc@l@{BHe@JqCCoAMuAW_BQs@c@{A[u@GSBEBFEA?EPZ`@z@b@xAR|@",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/19250766971"
   }
 ]
