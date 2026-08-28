@@ -1,5 +1,21 @@
 [
   {
+    "id": 19931734266,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "distanceMeters": 5011,
+    "pace": "6:35/km",
+    "effort": 24,
+    "type": "Run",
+    "date": "2026-08-28T08:46:33Z",
+    "map": {
+      "summaryPolyline": "aibpB{wibMb@HdALhCf@t@Tl@?^G@@ABy@BaAIuAUiBa@k@Em@KaBQuBWy@Go@Mg@@YG{@Ik@MGAAB@BNFPFzBFd@Hp@BlBb@Z@XHT@h@Kd@BrCb@tB`@x@TZ?XEVB@AICYFW?}@GwAS{Be@q@Gq@Mq@EwC]a@AiASe@BUGc@Ew@MS?G@?Bp@N\\C\\HNFfBBl@Rd@?v@Tp@FPAVGRCz@D`Ep@hBd@P?l@CJBB?CGYDY@iAIk@GqCk@uAS{Da@cBQg@K]?a@Gc@EeAOK?@DNFZDf@Df@CZ@x@Rd@P`BTfAJH?f@Mn@Bt@N|@JdBZh@Jn@R\\Bh@GN?@ACAg@HkAE}E}@wAQy@EeC]gDWwAS]DKAFDPBd@AjDZvAF\\F~@\\r@ElADdAPt@Hb@JxAVh@NZ@j@CDA@CIA_@H",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/19931734266"
+  },
+  {
     "id": 19760391538,
     "day": "16 Aug 2026",
     "title": "Morning Run",
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/19480388788"
-  },
-  {
-    "id": 19440250413,
-    "day": "24 Jul 2026",
-    "title": "Morning Run",
-    "distance": "7.6 km",
-    "distanceMeters": 7604,
-    "pace": "7:13/km",
-    "effort": 23,
-    "type": "Run",
-    "date": "2026-07-24T07:17:48Z",
-    "map": {
-      "summaryPolyline": "qd_pBojibMJx@HxCGj@@VAVYzBq@fBWz@a@z@c@d@iB~BeAl@{Al@WD[PUHo@Xy@D}@JWAq@_AMeBAk@Kc@]_A?HXj@DPBrA?bAETGJURKNEBG@_A[oBe@mA[IGGEEO@ULi@EIwAa@cAQm@QeAMg@AQ@UFIFCFG~AUtBBbAGzADpA?~AENKDMCqDoAi@Ie@Qu@CGCIKEU?c@?[Fa@DOHI^MjAMLBHL@z@FJfBBl@FLEDM?a@NoBBy@NoAFy@FWJKz@Q^?bBTnCz@F?JG\\mAL{@r@_CNo@Ts@R_Aj@sBLYN{@dAaEL}@f@oA`@sBhAyCLg@Hy@Zi@F?vBj@d@VXVZPXJhA|@pAtAbB`CXfATn@X|AHh@NrB@dBCl@@r@If@]tAS`@}@zBi@x@mAbBYRk@Ti@d@qBbAaA\\yA^s@HQ?MGSa@_@a@IoAAs@Kk@Qi@O]CA?HTh@BPRvB?j@CREDe@^MFk@MsAUu@[uAa@IMAIBSFc@EQG@}@]oA_@_ASy@Cc@@a@DMFEJInBKnAGj@Dx@Ev@BaAK{@LiB@o@H{@DQLMPIj@Kl@?f@FfAT|Bt@JFBDAXIj@DLdAXz@ZbCr@DAXUTKDQ@_@Co@Ee@Y}A@QBAHFR\\Nl@JfABzAl@t@LBXApAOpC}@j@[\\YfAuAr@e@^e@j@a@|@wAd@eAPi@TaAPaB@u@",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/19440250413"
   }
 ]
