@@ -1,5 +1,21 @@
 [
   {
+    "id": 20222957281,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "0.7 km",
+    "distanceMeters": 745,
+    "pace": "6:04/km",
+    "effort": 21,
+    "type": "Run",
+    "date": "2026-09-18T08:13:57Z",
+    "map": {
+      "summaryPolyline": "",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/20222957281"
+  },
+  {
     "id": 20207586749,
     "day": "Yesterday",
     "title": "Morning Run",
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/19931734266"
-  },
-  {
-    "id": 19760391538,
-    "day": "16 Aug 2026",
-    "title": "Morning Run",
-    "distance": "21.1 km",
-    "distanceMeters": 21106,
-    "pace": "5:34/km",
-    "effort": 74,
-    "type": "Run",
-    "date": "2026-08-16T06:12:10Z",
-    "map": {
-      "summaryPolyline": "me_pBclibM`@bCJvBAh@MxB]nB?h@cAdCeA~Ai@j@oBxAgBz@}Cx@i@XcADk@h@MzCL~BGhAPdAEv@JLhAZFLOxGJnBIj@T`FAHWRiB?KNChAGLQS[kAo@UQ[JoCGaABoAKe@NaCDaEDOf@ElABlBTEtFRvBG|@JdFk@Z}ADKd@?t@GJMO_@sAk@WQ[DcBKsAD_BUy@ZkCDiDFOZIxDNPFExG@h@P|@Cb@LzEQZ[N_BDOZAlAO@a@{As@a@M]HwBKiADuAMq@NwCBcDTQlBD|AHHBBPG|FVnBGf@LpFo@TaBDK`@CdAG@KOYmAk@]Q[DeBGqAHuAQwALcINIxAANMBuCCaAH{AGaDKS_AcAwCu@gBu@TCtAVpCv@\\Cf@c@F]c@uE^nAXbDr@bAnAIlE_Bx@e@~BoBvA}A|@}Ab@mAZeBNeDQ}COiAe@wBi@}AUa@WQ@K]i@aC_C]Q_Cy@oBiA_EaA^CpANlElAb@ZfAb@jCzBfBhCx@|AbAhFJfDExAK~@e@zBqAxCsBvC{@x@{At@{DnAy@^sADk@r@E|CFhBEpBRhBtAf@OzCC~AHh@HvACl@b@xE{@j@eBJM^Az@GJKQWgAQSg@WG]FqAEqBFaAOq@Ca@ReHLMvA@dCPGlBApDBt@Zx@E~Fq@\\cA?SFIRAdAGJKO[mAq@]SYHsGU}@TuITKvABL[BoMGQ}@}@QIyDcA}@c@HIf@HjEnATAl@e@DUG{BU{ADI^bBNpCl@`ATBdC[|BaAjAw@pCeCjBiCnAcEPsAD}AQoD}@{D{@iB_BcCq@_@wAmAyCmAsCcAoBYQM?ILETDrG~ApA~@lA`@jBzA`CzCd@`AbA`GLnDA|@KnAc@jBu@vBoBxCiFxDsAd@uAR{@Vo@Bo@n@IrBJnCCfAR~@ExAHJ|@ZJTQnD?pABhALl@AZXnFo@Ts@@s@NINCfAGNOOUmAQOc@MOYBkDLgBWaAPyHVQfEFPHKlGBv@NbADjGq@ZuAFIZC`AKDi@{Ao@[MQ@gCCoCKiAJwA?{ANuCf@Mr@?PUJwDCwGGSeAgAyBe@yBu@KM`@AjFpAr@g@BUC{AYmBDSTLNf@LxDn@~@h@BpASnDuAhBeAfAy@jBoC|A}D\\}BBqAOoCm@{Dq@sBo@gAqAaBw@k@sAiBSe@w@OqBK{DgASSLCjB`@fEjAvEvCZZ~BrDh@rAr@~DJ`DIqBUmA",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/19760391538"
   }
 ]
