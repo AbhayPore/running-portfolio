@@ -1,7 +1,7 @@
 [
   {
     "id": 20496697289,
-    "day": "Today",
+    "day": "Yesterday",
     "title": "Morning Run",
     "distance": "5.1 km",
     "distanceMeters": 5149,
@@ -17,7 +17,7 @@
   },
   {
     "id": 20483545733,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "4.8 km",
     "distanceMeters": 4793,
@@ -33,7 +33,7 @@
   },
   {
     "id": 20467780971,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "7.3 km",
     "distanceMeters": 7284,
@@ -49,7 +49,7 @@
   },
   {
     "id": 20441150026,
-    "day": "4 days ago",
+    "day": "5 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5015,
@@ -65,7 +65,7 @@
   },
   {
     "id": 20426879261,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "14.2 km",
     "distanceMeters": 14206,
@@ -81,7 +81,7 @@
   },
   {
     "id": 20415121111,
-    "day": "6 days ago",
+    "day": "2 Oct 2026",
     "title": "Morning Run",
     "distance": "7.0 km",
     "distanceMeters": 7011,
