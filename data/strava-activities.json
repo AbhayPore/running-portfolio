@@ -1,7 +1,39 @@
 [
   {
+    "id": 20655703460,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "1.0 km",
+    "distanceMeters": 1007,
+    "pace": "7:07/km",
+    "effort": 20,
+    "type": "Run",
+    "date": "2026-10-20T06:52:51Z",
+    "map": {
+      "summaryPolyline": "",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/20655703460"
+  },
+  {
+    "id": 20655703470,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "0.3 km",
+    "distanceMeters": 259,
+    "pace": "6:11/km",
+    "effort": 20,
+    "type": "Run",
+    "date": "2026-10-20T06:49:56Z",
+    "map": {
+      "summaryPolyline": "",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/20655703470"
+  },
+  {
     "id": 20629512732,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "VDHM 2026",
     "distance": "21.2 km",
     "distanceMeters": 21203,
@@ -17,7 +49,7 @@
   },
   {
     "id": 20629512688,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "0.2 km",
     "distanceMeters": 155,
@@ -33,7 +65,7 @@
   },
   {
     "id": 20604017909,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5015,
@@ -49,7 +81,7 @@
   },
   {
     "id": 20561563271,
-    "day": "6 days ago",
+    "day": "13 Oct 2026",
     "title": "Morning Run",
     "distance": "6.5 km",
     "distanceMeters": 6506,
@@ -206,37 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/20415121111"
-  },
-  {
-    "id": 20386345918,
-    "day": "30 Sept 2026",
-    "title": "Morning Run",
-    "distance": "8.0 km",
-    "distanceMeters": 8006,
-    "pace": "5:42/km",
-    "effort": 50,
-    "type": "Run",
-    "date": "2026-09-30T05:00:02Z",
-    "map": {
-      "summaryPolyline": "iibpB{wibM`El@tBd@\\Cr@UF@?BCDMFiAJWEg@O_BUw@G}@OiBSmAKkB[kGe@dANZ?vAHxACz@Dn@Ld@BfB^hCZrB^j@PNB^Cp@UH@CHSHw@HMAUCu@Sa@Ey@Ms@EmAUqCWyB[gBOyCc@I?BHHBl@Hl@@pALtAEhAHj@J^DhATtBVxCf@z@Td@Ap@UF@CJIDgAJgB]aCYwAUkBOkCa@sCUyAWWCIBLFZFl@BtAPZ?b@G\\?jAHd@J|@HxAXdBPnCf@`@NVD^Ap@UDABDCDOHk@HU@SCs@UkBWk@EmAQkCYsC_@_BOsCc@GDBHLHf@JP@\\E\\?p@Np@Cv@@fAJv@LbAFrC`@bAV`ANz@VT@NAn@[H@@BEFOHUDa@@uA[uIcA{AYqAM{AIs@Og@Eq@MIB?DJHTHTDbACt@Pf@Ax@@fAF|@Nb@?fBTbBV`@Lb@Jt@Hv@RZ@v@YFABBGH_@LWBSAs@QqG{@oAKcBYi@Eq@K_BGu@Qy@IWIG?CB@FHDb@LpACl@PfB@dAF~@NrBR~B^fAVj@Fv@TR@NCh@WHABBEHUJUB[@c@Ik@OaDc@",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/20386345918"
-  },
-  {
-    "id": 20371568552,
-    "day": "29 Sept 2026",
-    "title": "Morning Run",
-    "distance": "10.0 km",
-    "distanceMeters": 10007,
-    "pace": "5:12/km",
-    "effort": 66,
-    "type": "Run",
-    "date": "2026-09-29T04:53:02Z",
-    "map": {
-      "summaryPolyline": "qibpBwwibMjDb@rATh@TRBZ?r@WH?B@KH[Fe@FW?SEa@O}@Ko@Oi@EiAWoBOk@KuBQo@KyAIaAK}@QI@BFPBxA@|@Lf@?d@BhCTnARh@DxBVpCd@f@RN@\\@|@UD??BIHSFi@HS?u@UyB]}@Ii@KwBSeEk@qCO{AYE@BFVDvA@~@Nj@ArALnAH|@PvD`@lCb@v@V\\@NAj@SD??FEDOFm@HO?gAYmEo@oCWmDg@oCQuASQAFHPBjA@v@JfAB~CVj@JhCXtBXtATh@PRDf@?l@SF@GHSHa@FY@eAYaFs@}AMwEm@wBMkB[E@A@FFLBrA@dALt@@|ANj@Bv@NfEd@rCb@~@Vb@?n@SH??@EHSHe@FW@cAW}Es@}AMsEo@wBKoBYIAEBNFhBD\\HhA@z@JdBLr@LhD^pAPtAVh@NRD\\?VEZMF?@BKHSHa@FW?aAYcFq@eBQgFo@eBKyAUUADFZD`A?nAPj@A`BPh@Bl@HRFtBPnAPlC`@p@RRDd@Al@QF@CDQJc@HY@oAYaBWm@GgAQ_AImFq@{BOuB[G@BDRFpA@jANr@?rANr@BdBVr@D`El@z@Nd@NZD`@Al@QF?EJSH]F_@@}@WyB[e@EaAQkBQkEk@q@G_ACuB[IBBDTBtABdAL`@ArALbAFbAPjBPhALhCb@|@TTDN@TCl@SDBKJQFu@HkAYuEq@{BSkDe@sCScBWI?CBFDTFdA?~@Dt@H",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/20371568552"
   }
 ]
