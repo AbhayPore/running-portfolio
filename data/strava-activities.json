@@ -1,7 +1,23 @@
 [
   {
+    "id": 20682047567,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.0 km",
+    "distanceMeters": 5017,
+    "pace": "5:29/km",
+    "effort": 45,
+    "type": "Run",
+    "date": "2026-10-22T05:15:56Z",
+    "map": {
+      "summaryPolyline": "gibpBowibM|ARpCd@l@N\\FRAn@WF?D@CDKBu@HWAiAYoCYiB[mAIaEg@cAEsBYi@OG?CBDDNB~@@r@NhALf@?hAPpA\\lB@b@DvAZdCZh@PZD\\Ap@WD@GFODk@HS?kDk@yDg@oCMuAQs@EeAOeAGcAQ\\Hr@Dv@Rx@BxAR`BBl@Jr@BbA@h@J`El@^J`@FZAh@UJ?CHMDu@LO?{@Qw@SiC[oB_@}CM}ASqBKoB[n@N^@h@Jn@?n@Dz@TvALbANx@Ez@@tB\\fAVfBX`@?j@UF??BOHa@Hc@B}A]oEm@iAM{BQmCYq@AiAIe@Ki@Gf@Nb@At@Hv@Ex@Vd@F",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/20682047567"
+  },
+  {
     "id": 20655703460,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "1.0 km",
     "distanceMeters": 1007,
@@ -17,7 +33,7 @@
   },
   {
     "id": 20655703470,
-    "day": "Yesterday",
+    "day": "2 days ago",
     "title": "Morning Run",
     "distance": "0.3 km",
     "distanceMeters": 259,
@@ -33,7 +49,7 @@
   },
   {
     "id": 20629512732,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "VDHM 2026",
     "distance": "21.2 km",
     "distanceMeters": 21203,
@@ -49,7 +65,7 @@
   },
   {
     "id": 20629512688,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "0.2 km",
     "distanceMeters": 155,
@@ -65,7 +81,7 @@
   },
   {
     "id": 20604017909,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5015,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/20426879261"
-  },
-  {
-    "id": 20415121111,
-    "day": "2 Oct 2026",
-    "title": "Morning Run",
-    "distance": "7.0 km",
-    "distanceMeters": 7011,
-    "pace": "5:60/km",
-    "effort": 41,
-    "type": "Run",
-    "date": "2026-10-02T08:00:44Z",
-    "map": {
-      "summaryPolyline": "_ibpBswibMzAR`C`@|@RxAJHCACE?e@DsAI_AM{@Uw@Cc@K_Da@aAIw@MqBSe@?k@OyAWCBBDJDXDhADhEX|AFf@Lz@Jb@JlAJj@PjBXh@Lt@Fj@?BBMAWBYA[K{@EgB_@q@Ai@MuASe@C{ASS?sCc@i@?qAOa@GSIEB@BF@j@Bx@LtADxAPz@B|@PzGz@fCf@^Bt@?KEo@FO?aC]k@O}@K_@IkAQi@?y@Mk@CwAO{@MsCQUG]SE?PJ|@Fv@Jv@@v@NfADt@H`AN`BP|C`@fCf@nABFCGCm@H]AoDm@g@E{@Oo@IeAGcAOuAKcBUwBK]IUMKAFDvBV|@BdDXlAPpD`@`Fx@dA@@Ba@AQ@eAIe@Mg@E{Do@gDWkDc@kBIg@M[KG@FDlAFn@H`A@p@NdADjBXt@D`AN|APhCb@h@Ld@Dv@@ACIAk@D[A}B]q@QcD_@cDYyC_@cBGm@K]AhA?TBn@P^Cj@BbAH",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/20415121111"
   }
 ]
