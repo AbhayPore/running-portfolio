@@ -1,7 +1,23 @@
 [
   {
-    "id": 20682047567,
+    "id": 20696258023,
     "day": "Today",
+    "title": "Morning Run",
+    "distance": "2.0 km",
+    "distanceMeters": 2006,
+    "pace": "9:24/km",
+    "effort": 20,
+    "type": "Run",
+    "date": "2026-10-23T07:21:53Z",
+    "map": {
+      "summaryPolyline": "{b_pBocibMEfAQnBI^Wx@Ul@c@x@q@bAQRKPeArAg@d@OTQF{@p@q@Tk@VmAZa@P]?y@L_@COUCUEOa@YEKEiAGa@@IREl@EhACn@Ot@m@Vi@N_@j@w@RKn@Er@NlAh@`@VZJH?b@i@NWh@mAj@eBRy@Be@B}@AqABa@Eo@SeAGs@Oq@Gk@_@qAg@eAQ[QOSMe@i@DD",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/20696258023"
+  },
+  {
+    "id": 20682047567,
+    "day": "Yesterday",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5017,
@@ -17,7 +33,7 @@
   },
   {
     "id": 20655703460,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "1.0 km",
     "distanceMeters": 1007,
@@ -33,7 +49,7 @@
   },
   {
     "id": 20655703470,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "0.3 km",
     "distanceMeters": 259,
@@ -49,7 +65,7 @@
   },
   {
     "id": 20629512732,
-    "day": "4 days ago",
+    "day": "5 days ago",
     "title": "VDHM 2026",
     "distance": "21.2 km",
     "distanceMeters": 21203,
@@ -65,7 +81,7 @@
   },
   {
     "id": 20629512688,
-    "day": "4 days ago",
+    "day": "5 days ago",
     "title": "Morning Run",
     "distance": "0.2 km",
     "distanceMeters": 155,
@@ -81,7 +97,7 @@
   },
   {
     "id": 20604017909,
-    "day": "6 days ago",
+    "day": "16 Oct 2026",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5015,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/20441150026"
-  },
-  {
-    "id": 20426879261,
-    "day": "3 Oct 2026",
-    "title": "Morning Run",
-    "distance": "14.2 km",
-    "distanceMeters": 14206,
-    "pace": "4:58/km",
-    "effort": 83,
-    "type": "Run",
-    "date": "2026-10-03T05:50:36Z",
-    "map": {
-      "summaryPolyline": "_o_pB{qebMH\\NZv@dAhAp@v@^^Ht@DjBSbA[f@[BE?MMKF@NTF@LIr@u@h@eARcADwAE}@ScAe@gAwA}Ak@Y{@We@Ii@AwAFk@Lq@XcBrAq@vAKZMv@?vAFt@P~@`@z@d@n@n@l@`Br@h@HxBCf@IbA]j@_@l@e@b@m@Tg@Lq@Hu@BaAAs@Mo@Y_Ae@_Ao@q@sAq@oAWy@EuAJ_AZaAp@y@|@o@nA[tAGJSHm@@eAGaECm@COGIO?eANiHJsAA{EDgDFSNCpGDv@Al@@x@Ox@ZnCFRCt@g@^IRAb@Rj@h@TFrC@j@Ov@V|AHrCBt@Cp@Fd@LjAr@ZZT`@Pz@Dx@GhAElDKjADvAAhCI~@IRIHaAFaB?eBEaGWIGEKIiAMk@y@eBe@i@o@e@y@_@s@Mi@Ge@?w@Dq@Hg@Pi@\\i@`@i@l@W^Ob@Qv@Gt@?z@F|@Jp@Pj@Vl@X^Z^j@b@lA`@|AN`@?r@EzAa@v@g@~@mAf@sAN}A@aAEg@Gg@YcA]i@o@q@uA_Ai@Ok@GaBAu@Je@LiAn@i@d@Yb@m@pA]xASP[@sHOYAOGGIAQ?}BJyB@wBHu@?qCFwFHYHERA`ADfGJnAO|@TjCBXEr@i@f@G^Ft@p@^LrC@l@Ot@Rp@BzDFtAC~@R`Ah@PRn@jAL`@B`@IlGMzADz@CvBKfBGNMHe@FuCAaFQeBCIGIOKkA[kAO]g@q@w@s@_Ag@{@S_AEcABw@No@T{@h@e@f@a@p@a@~@YhAMPKDwA@iGQWIEa@FiD?cANgEF_F?uC@MFIZEjAF~B@xBJ\\Af@MTAr@PtCBXGj@c@n@GXFz@r@VFtCBt@M|@RbCBrAFfBBt@N~@f@`@f@d@bAJt@IhGMrADtAKzDCXKLm@JiC@sIWKEGMKoA]iAg@aAQSMIEIaAq@eA_@k@I{@AiAHcAZkAn@{@fA]z@UbAG~AHpAHZfApBd@h@rAv@|@R~AB~@Iv@Qh@Yx@q@TYp@sARw@H{@A}@MkAq@kBq@y@cAm@cBe@_BGuANm@Xm@`@aA~@QXg@bBGnA?t@J|@Lj@LZa@eA",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/20426879261"
   }
 ]
