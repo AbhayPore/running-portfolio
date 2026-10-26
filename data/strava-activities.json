@@ -1,7 +1,23 @@
 [
   {
+    "id": 20732853562,
+    "day": "Today",
+    "title": "Morning Run",
+    "distance": "3.0 km",
+    "distanceMeters": 3024,
+    "pace": "5:17/km",
+    "effort": 43,
+    "type": "Run",
+    "date": "2026-10-26T06:32:52Z",
+    "map": {
+      "summaryPolyline": "gibpBuwibMdBPhB`@j@Hp@Pb@@HCd@WF?BDGHYHMDc@@eAWu@Io@McBU_AIkDe@cE[o@MqAQIB@BHB|@F\\@xAH^?tARj@@xANj@JdCXnAXtB\\l@DNE^QH?@DCDc@NUBUAcAWyEo@yAMaAQyC[iBGoBYUIG@BDLHXF|@@`ADb@Cp@FxDT`@Lf@JbCX~B`@n@R\\DV?f@WJ@GFQFm@B]Aw@Qc@E",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/20732853562"
+  },
+  {
     "id": 20696258023,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "2.0 km",
     "distanceMeters": 2006,
@@ -17,7 +33,7 @@
   },
   {
     "id": 20682047567,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "5.0 km",
     "distanceMeters": 5017,
@@ -33,7 +49,7 @@
   },
   {
     "id": 20655703460,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "1.0 km",
     "distanceMeters": 1007,
@@ -49,7 +65,7 @@
   },
   {
     "id": 20655703470,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "0.3 km",
     "distanceMeters": 259,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/20467780971"
-  },
-  {
-    "id": 20441150026,
-    "day": "4 Oct 2026",
-    "title": "Morning Run",
-    "distance": "5.0 km",
-    "distanceMeters": 5015,
-    "pace": "6:45/km",
-    "effort": 20,
-    "type": "Run",
-    "date": "2026-10-04T07:04:25Z",
-    "map": {
-      "summaryPolyline": "aibpBmwibMnBT|B`@d@PRBX@PCJC`@SD??BKHQD[D]A{@K}@Oa@Ma@CiAS}CY}@QmAEwBQc@AwBa@EBBDJDrBP~@A`ABv@LbBLTB\\T^B`@@bALx@LlAVh@Fj@Nf@@v@YF?@@IJOFo@DWA}@Uk@Em@Ku@GsAYq@K{@EaASmBS}@?}Ci@WAI@ED@FDDTDd@?fAJ`B?p@D|BXh@?b@JdCXrBd@h@F^NJBf@@LEd@UHADBCFUJu@DQ?u@SkCWkB]{D]}@I_@I_BK{ASk@OMAE@FDTD`@B^FtADf@Ap@Df@LtB\\X?TC\\Fx@FlB\\zARr@TVB\\Ar@UF?@Bc@R_@DS?iF}@eBUyC[eAUWCi@?m@Ee@CaBQ_@IPFpANP@h@ArBT`@B",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/20441150026"
   }
 ]
