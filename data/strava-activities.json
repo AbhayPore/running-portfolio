@@ -1,7 +1,23 @@
 [
   {
-    "id": 21053687237,
+    "id": 21065581306,
     "day": "Today",
+    "title": "Morning Run",
+    "distance": "5.2 km",
+    "distanceMeters": 5203,
+    "pace": "6:16/km",
+    "effort": 30,
+    "type": "Run",
+    "date": "2026-11-21T08:01:47Z",
+    "map": {
+      "summaryPolyline": "iibpBuwibM`@D^HzATv@Nh@Dt@VT@TEf@UF@@DEHWHUB[?qDo@i@Eu@UuAGsB[aAGgBSa@Ai@IyAI]KI?b@Jn@?n@HdDPlCV`@JtALd@Jh@FhCb@t@Rh@@f@WHAF@?DGHSFe@HQ?iB]a@Ge@Km@Eg@Mw@KeI}@u@Aa@Ko@C_AQPHPB`BJr@?v@DvCXpFt@lCb@^NVDX@LCh@UHABDCFOFm@LQ?eAQe@M_@Ci@Mk@Go@OgEe@yAM_BWq@A]I_AEc@MG@HFj@FbBJj@?n@Dx@Jl@@x@JfAP|APlEr@d@NZDb@CJEPOFAF@?JOHm@LSAg@I_@KuCa@}@QgFi@{B]aACe@Gm@E{@MPFjAFz@Jf@@b@HfBFxALjARnBPpAZxARn@RX@RCl@UF@@DGHOF{@Ha@Ei@Sq@Gm@O",
+      "resourceState": 2
+    },
+    "url": "https://www.strava.com/activities/21065581306"
+  },
+  {
+    "id": 21053687237,
+    "day": "Yesterday",
     "title": "Morning Run",
     "distance": "15.2 km",
     "distanceMeters": 15205,
@@ -17,7 +33,7 @@
   },
   {
     "id": 21029169240,
-    "day": "2 days ago",
+    "day": "3 days ago",
     "title": "Morning Run",
     "distance": "15.3 km",
     "distanceMeters": 15312,
@@ -33,7 +49,7 @@
   },
   {
     "id": 21016267840,
-    "day": "3 days ago",
+    "day": "4 days ago",
     "title": "Morning Run",
     "distance": "10.0 km",
     "distanceMeters": 10023,
@@ -49,7 +65,7 @@
   },
   {
     "id": 20991848195,
-    "day": "5 days ago",
+    "day": "6 days ago",
     "title": "Morning Run",
     "distance": "25.0 km",
     "distanceMeters": 25019,
@@ -65,7 +81,7 @@
   },
   {
     "id": 20978358471,
-    "day": "6 days ago",
+    "day": "14 Nov 2026",
     "title": "Morning Run",
     "distance": "5.1 km",
     "distanceMeters": 5077,
@@ -222,21 +238,5 @@
       "resourceState": 2
     },
     "url": "https://www.strava.com/activities/20798168054"
-  },
-  {
-    "id": 20773392476,
-    "day": "29 Oct 2026",
-    "title": "Morning Run",
-    "distance": "3.5 km",
-    "distanceMeters": 3508,
-    "pace": "5:49/km",
-    "effort": 34,
-    "type": "Run",
-    "date": "2026-10-29T07:43:56Z",
-    "map": {
-      "summaryPolyline": "ol_pBoxibMSSa@UeB_@OMSYwAi@YCKDEHi@vB[fBSh@k@xBSn@[|Ai@bBYbB]rA]jA_ArDoArDKr@[hAUfA?HBFTJhARtCx@TBHCh@c@FUCu@?w@Oy@Qk@@IFGF@DFVz@Dl@F|B@Jn@|@NDRApB]rA_@^OnBiApAgAd@g@V_@DMCMMMcA_@wC[MBOJ_@l@Uj@KTSPUNo@Ta@LiAAq@FKDED?NRfBl@t@NBVA|AUzAi@VCVItBeAdAw@f@m@JIlAoBPa@Ni@d@oAT}@S|@Sl@DIDWXs@TgBDqBEeA",
-      "resourceState": 2
-    },
-    "url": "https://www.strava.com/activities/20773392476"
   }
 ]
